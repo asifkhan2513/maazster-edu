@@ -1,0 +1,15 @@
+export const PATH = {
+  HOME: "/",
+  COURSES: "/courses",
+  PLANS: "/plans",
+  TESTIMONIALS: "/testimonials",
+  CONTACT_US: "/contactus",
+  ABOUT_US: "/aboutus",
+  PRIVACY_POLICY: "/privacypolicy",
+  TERMS_AND_CONDITIONS: "/termsandconditions",
+  FAQ: "/faq",
+  BLOG: "/blog",
+  CAREERS: "/careers",
+  HELP: "/help",
+  SUPPORT: "/support",
+};
