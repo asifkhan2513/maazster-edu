@@ -25,6 +25,10 @@ const testimonials = [
   },
 ];
 
+export const metadata = {
+  title: "Maazster Edu : Testimonial",
+  description: "this is course page",
+};
 const Testimonials = () => {
   return (
     <div className=" mt-9">

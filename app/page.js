@@ -29,7 +29,7 @@ export default function Home() {
             alt="banner"
             object-contain
             className="w-[400px] h-[600px]"
-            loading="lazy"
+            loading="lazy" 
           />
         </div>
       </div>

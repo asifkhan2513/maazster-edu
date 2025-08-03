@@ -11,6 +11,11 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Maazster Edu :Contact us",
+  description: "this is course page",
+};
+
 const page = () => {
   return (
     <>

@@ -1,6 +1,13 @@
 import React from "react";
 import Navbar from "@/app/navbar/page";
 
+export const metadata = {
+  title: "Maazster Edu : Courses",
+  description: "this is course page",
+  auther: [{ name: "Maazster" }, { name: "Maazster edu" }],
+  keywords: ["nextjs", "reactjs"],
+};
+
 const courses = [
   {
     title: "Full Stack Development",

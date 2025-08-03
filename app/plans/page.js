@@ -40,6 +40,10 @@ const plans = [
   },
 ];
 
+export const metadata = {
+  title: "Maazster Edu : Plans",
+  description: "this is course page",
+};
 const Plans = () => {
   return (
     <div className=" mt-9">
