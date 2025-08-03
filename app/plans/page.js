@@ -1,29 +1,50 @@
 import React from "react";
-
+import Navbar from "@/app/navbar/page";
 
 const plans = [
   {
-    name: "Basic",
-    price: "₹4999",
-    features: ["Access to 1 course", "Email support", "1 Month Validity"],
+    name: "SUMMER TRAINING",
+    price: "RS.6500 ",
+    features: [
+      "5 Hour Daily Classes",
+      "Recovery Class For Each Session",
+      "Study Material Of Each Languages",
+      "Free Access Of Online Portal For 1 Year",
+      "Free Web Servers",
+      "Project File According To Project",
+    ],
   },
   {
-    name: "Pro",
-    price: "₹9999",
-    features: ["Access to all courses", "Doubt sessions", "3 Month Validity"],
+    name: "INDUSTRIAL TRAINING",
+    price: "RS.15000 ",
+    features: [
+      "Specialized Courses",
+      "Increases Practical Knowledge",
+      "Provides Industrial Exposure",
+      "Polish Your Interdisciplinary Knowledge",
+      "Develop Interpersonal Skills",
+      "Customized Training Solutions",
+    ],
   },
   {
-    name: "Premium",
-    price: "₹14999",
-    features: ["1:1 Mentorship", "Placement support", "Lifetime Access"],
+    name: "JOB-ORIENTED TRAINING",
+    price: "RS.30000 ",
+    features: [
+      "Job Placement Assistance",
+      "Interview Preparation",
+      "Industry Experts As Instructors",
+      "Practical Experience",
+      "Industry-Relevant Curriculum",
+      "Professional Certifications",
+    ],
   },
 ];
 
 const Plans = () => {
   return (
-    <div >
-   
-      <section id="plans" className="py-12 bg-white">
+    <div className=" mt-9">
+      <Navbar />
+      <section id="plans" className="py-12 bg-gray-100">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-8">Choose Your Plan</h2>
           <div className="grid md:grid-cols-3 gap-6">
