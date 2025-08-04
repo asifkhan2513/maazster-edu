@@ -6,16 +6,22 @@ import Banner from "@/app/common/banner.png";
 import Testimonials from "@/app/testimonials/page";
 import { FaUserGroup } from "react-icons/fa6";
 import { ChevronsLeftRightEllipsis } from "lucide-react";
+import BannerSection from "./banner";
 
 export default function Home() {
   return (
     <div className="no-scrollbar overflow-auto pt-24">
       <Navbar />
-      <div className=" flex ">
-        <div className="w-[50%] h-[350px] text-center text-2xl mt-20">
-          Welcome to our EduLab <br />
+      <div className=" flex mt-20 ">
+        <div className="w-[50%] relative h-[350px] text-center text-2xl mt-20 ">
+
+        <img className="absolute -z-10  h-[300px]  bottom-0" src="https://maazstertech.in/assets/images/banner-left-dec.png"/>
+        
+        <p className="text-gray-400">Welcome to our EduLab </p>
+          <br />
+          <h1 className="text-5xl font-bold ">Best Place To Learn</h1>
           <span className=" text-3xl font-bold">
-            Best Place To Learn MERN Full Stack with AI Join Us Now!
+             MERN Full Stack with AI Join Us Now!
           </span>
           <br />
           <button className=" text-2xl border rounded-md w-[150px] h-[40px] bg-orange-400 border-black">
@@ -23,17 +29,28 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="w-[50%] ml-64">
-          <Image
+        <div className="   w-[50%] flex justify-center">
+
+        <div className="relative  flex  justify-center">
+        <img className="h-[300px]" src="https://maazstertech.in/assets/images/banner-right-dec.png"/>
+  <Image
             src={Banner}
             alt="banner"
             object-contain
-            className="w-[400px] h-[600px]"
+            className="w-[300px] h-[520px] absolute top-1"
             loading="lazy"
           />
         </div>
+          {/* <Image
+            src={Banner}
+            alt="banner"
+            object-contain
+            className="w-[300px] h-[520px]"
+            loading="lazy"
+          /> */}
+        </div>
       </div>
-      <div className="">
+      <div className="flex flex-col items-center justify-center mt-32">
         <h1 className="text-3xl font-bold flex ">
           Empowering Your Learning Journey
         </h1>
@@ -91,6 +108,7 @@ export default function Home() {
       <section className="pt-24">
         <Courses />
         <Plans />
+        <BannerSection/>
         <Testimonials />
         {/* other sections */}
       </section>
