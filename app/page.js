@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <div className="no-scrollbar overflow-auto pt-24">
       <Navbar />
-      <div className=" flex">
-        <div className="w-[50%] h-[350px] text-center text-2xl">
+      <div className=" flex ">
+        <div className="w-[50%] h-[350px] text-center text-2xl mt-20">
           Welcome to our EduLab <br />
           <span className=" text-3xl font-bold">
             Best Place To Learn MERN Full Stack with AI Join Us Now!
@@ -29,7 +29,7 @@ export default function Home() {
             alt="banner"
             object-contain
             className="w-[400px] h-[600px]"
-            loading="lazy" 
+            loading="lazy"
           />
         </div>
       </div>

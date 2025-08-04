@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: "Rahul Mehta",
     feedback:
-      "Great learning environment. I got placed within 2 months after the course.",
+      "Great learning environment. I got placed within 2 months after the course ",
     image: user2,
   },
   {

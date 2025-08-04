@@ -11,7 +11,7 @@ const plans = [
       "Study Material Of Each Languages",
       "Free Access Of Online Portal For 1 Year",
       "Free Web Servers",
-      "Project File According To Project",
+      "Project File According To Project ",
     ],
   },
   {
