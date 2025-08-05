@@ -108,7 +108,14 @@ export default function Home() {
       <section className="mt-16">
         <Courses />
         <Plans />
+<<<<<<< HEAD
         <BannerSection/>
+=======
+        <div className="">
+          <div> girl image</div>
+          <div> content</div>
+        </div>
+>>>>>>> c61a43c9cd34a312a0a3883b55d789d085e60e35
         <Testimonials />
         {/* other sections */}
       </section>
