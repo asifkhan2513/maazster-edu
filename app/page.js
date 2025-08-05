@@ -7,7 +7,7 @@ import Testimonials from "@/app/testimonials/page";
 import { FaUserGroup } from "react-icons/fa6";
 import { ChevronsLeftRightEllipsis } from "lucide-react";
 import BannerSection from "./banner";
-import { TypeAnimation } from 'react-type-animation';
+
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
           <span className=" text-3xl font-bold animate-pulse text-orange-500">
              MERN Full Stack with AI Join Us Now!
           </span>
-          <br />
+          <br />          
           <button className=" text-2xl text-orange-100 rounded-md w-[150px] h-[40px] bg-orange-400 border-black mt-5">
             Join Now
           </button>
@@ -31,7 +31,7 @@ export default function Home() {
 
         <div className="   w-[50%] flex justify-center">
 
-        <div className="relative  flex  justify-center">
+        <div className="relative  flex  justify-center mb-20">
         <img className="h-[300px]" src="https://maazstertech.in/assets/images/banner-right-dec.png"/>
   <Image
             src={Banner}
@@ -50,7 +50,7 @@ export default function Home() {
           /> */}
         </div>       
       </div>
-      <div className="flex flex-col items-center justify-center mt-36">
+      <div className="flex flex-col items-center justify-center mt-52">
         <h1 className="text-3xl font-bold flex ">
           Empowering Your Learning Journey
         </h1>
