@@ -14,7 +14,7 @@ export default function Home() {
     <div className="no-scrollbar overflow-auto pt-24">
       <Navbar />
       <div className=" flex mt-20 ">
-        <div className="w-[50%] relative h-[350px] text-center text-2xl mt-14 ">
+        <div className="w-[50%] relative h-[350px] text-center text-2xl  ">
 
         <img className="absolute -z-10  h-[300px]  bottom-0" src="https://maazstertech.in/assets/images/banner-left-dec.png"/>
         <p className="text-gray-400 mt-10">Welcome to our EduLab </p>
