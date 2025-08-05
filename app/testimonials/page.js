@@ -34,11 +34,11 @@ const Testimonials = () => {
     <div className=" mt-9">
       <Navbar />
       <section id="testimonials" className="py-12 bg-gray-100">
-        <div className="max-w-6xl mx-auto px-4 text-center">
+        <div className="max-w-6xl mx-auto px-4 text-center ">
           <h2 className="text-3xl font-bold mb-8">What Our Students Say</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 ">
             {testimonials.map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-md">
+              <div key={index} className="bg-white p-6 rounded-xl shadow-md  hover:scale-110  duration-500  hover:bg-orange-500  hover:text-white">
                 <Image
                   src={item.image}
                   alt={item.name}
