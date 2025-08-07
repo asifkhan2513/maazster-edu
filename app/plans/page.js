@@ -40,6 +40,10 @@ const plans = [
   },
 ];
 
+// function clickHandler (){
+  
+  
+// }
 export const metadata = {
   title: "Maazster Edu : Plans",
   description: "this is course page",
@@ -66,7 +70,10 @@ const Plans = () => {
                     <li key={i}>✔️ {feature}</li>
                   ))}
                 </ul>
-                <button className="bg-orange-400 text-white px-4 py-2 rounded-full hover:bg-orange-500">
+                <button
+                  className="bg-orange-400 text-white px-4 py-2 rounded-full hover:bg-orange-500"
+                  // onClick={clickHandler}
+                >
                   Select Plan
                 </button>
               </div>

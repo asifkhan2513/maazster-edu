@@ -119,7 +119,7 @@ const ContactForm = () => {
         <textarea
           rows="3"
           placeholder="Type your message..."
-          className="w-full border-b outline-none py-2 px-1 focus:border-orange-500"
+          className="w-full border-b outline-none py-2 px-1 focus:border-orange-500 "
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
@@ -127,14 +127,14 @@ const ContactForm = () => {
 
         <div>
           <label className="block mb-2 font-medium">Courses</label>
-          <div className="grid grid-cols-2 gap-2 text-orange-600 text-sm">
+          <div className="grid grid-cols-2 gap-2 text-orange-600 text-sm cursor-pointer hover:cursor-pointer">
             {courseOptions.map((course) => (
               <label key={course}>
                 <input
                   type="checkbox"
                   value={course}
                   onChange={handleCourseChange}
-                  className="mr-2 accent-orange-500"
+                  className="mr-2 accent-orange-500 cursor-pointer"
                 />
                 {course}
               </label>

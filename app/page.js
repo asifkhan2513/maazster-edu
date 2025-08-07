@@ -7,7 +7,8 @@ import Testimonials from "@/app/testimonials/page";
 import { FaUserGroup } from "react-icons/fa6";
 import { ChevronsLeftRightEllipsis } from "lucide-react";
 import BannerSection from "./banner";
-
+import rightBanner from "../app/common/banner-right-dec.png";
+import leftBanner from "../app/common/banner-left-dec.png";
 
 export default function Home() {
   return (
@@ -15,40 +16,40 @@ export default function Home() {
       <Navbar />
       <div className=" flex mt-20 ">
         <div className="w-[50%] relative h-[350px] text-center text-2xl  ">
-
-        <img className="absolute -z-10  h-[300px]  bottom-0" src="https://maazstertech.in/assets/images/banner-left-dec.png"/>
-        <p className="text-gray-400 mt-10">Welcome to our EduLab </p>
+          <Image
+            className="h-[300px] w-[300px] object-contain"
+            src={leftBanner}
+            alt="leftBanner"
+            loading="lazy"
+          />
+          <p className="text-gray-400 mt-10">Welcome to our EduLab </p>
           <br />
           <h1 className="text-5xl font-bold mb-5">Best Place To Learn</h1>
           <span className=" text-3xl font-bold animate-pulse text-orange-500">
-             MERN Full Stack with AI Join Us Now!
+            MERN Full Stack with AI Join Us Now!
           </span>
-          <br />          
+          <br />
           <button className=" text-2xl text-orange-100 rounded-md w-[150px] h-[40px] bg-orange-400 border-black mt-5">
             Join Now
           </button>
         </div>
 
         <div className="   w-[50%] flex justify-center">
-
-        <div className="relative  flex  justify-center mb-20">
-        <img className="h-[300px]" src="https://maazstertech.in/assets/images/banner-right-dec.png"/>
-  <Image
-            src={Banner}
-            alt="banner"
-            object-contain
-            className="w-[300px] h-[520px] absolute top-1"
-            loading="lazy"
-          />
+          <div className="relative  flex  justify-center mb-20">
+            <Image
+              className="h-[300px] w-[300px] object-contain"
+              src={rightBanner}
+              alt="rightBanner"
+            />
+            <Image
+              src={Banner}
+              alt="banner"
+              object-contain
+              className="w-[300px] h-[520px] absolute top-1"
+              loading="lazy"
+            />
+          </div>
         </div>
-          {/* <Image
-            src={Banner}
-            alt="banner"
-            object-contain
-            className="w-[300px] h-[520px]"
-            loading="lazy"
-          /> */}
-        </div>       
       </div>
       <div className="flex flex-col items-center justify-center mt-52">
         <h1 className="text-3xl font-bold flex ">
@@ -108,18 +109,19 @@ export default function Home() {
       <section className="mt-16">
         <Courses />
         <Plans />
-        <BannerSection/>
-        <div className="">
+        <BannerSection />
+        {/* <div className="">
           <div> girl image</div>
           <div> content</div>
-        </div>
+        </div> */}
         <Testimonials />
         {/* other sections */}
       </section>
-    <footer className="w-full h-16 bg-white flex flex-col items-center justify-center ">
-    <p className=" text-xs">© 2025 Maazster Tech GENX PVT LTD.</p>
-    <p className=" text-xs">All Rights Reserved.</p>
-    <p className="text-orange-400 text-s">Powered By Maazstertech.com</p></footer>  
+      <footer className="w-full h-16 bg-white flex flex-col items-center justify-center ">
+        <p className=" text-xs">© 2025 Maazster Tech GENX PVT LTD.</p>
+        <p className=" text-xs">All Rights Reserved.</p>
+        <p className="text-orange-400 text-s">Powered By Maazstertech.com</p>
+      </footer>
     </div>
   );
 }
