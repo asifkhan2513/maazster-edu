@@ -59,12 +59,12 @@ const Courses = () => {
             {courses.map((course, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-md hover:bg-orange-500 hover:text-white"
+                className="bg-white rounded-xl p-6 shadow-2xl hover:scale-110  duration-500  hover:bg-orange-500  hover:text-white"
               >
                 <h3 className="text-xl font-semibold text-orange-500 mb-2">
                   {course.title}
                 </h3>
-                <p className="text-gray-600 mb-3">{course.description}</p>
+                <p className=" mb-3">{course.description}</p>
                 <span className="text-sm text-gray-500">
                   Duration: {course.duration}
                 </span>
