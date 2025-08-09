@@ -1,89 +1,42 @@
-// // // app/api/send-email/route.js
-
-// // import { NextResponse } from "next/server";
-// // import { Resend } from "resend";
-
-// // const resend = new Resend(process.env.RESEND_API_KEY);
-// // const toEmail = process.env.TO_EMAIL;
-
-// // export async function POST(req) {
-// //   try {
-// //     const body = await req.json();
-// //     const { firstName, lastName, email, phone, message, courses } = body;
-
-// //     // --- Validation ---
-// //     if (!firstName || !lastName || !email || !phone || !message) {
-// //       return NextResponse.json(
-// //         { error: "All fields except courses are required" },
-// //         { status: 400 }
-// //       );
-// //     }
-
-// //     // --- Format the courses for the email ---
-// //     const coursesText =
-// //       courses.length > 0 ? courses.join(", ") : "None selected";
-
-// //     const data = await resend.emails.send({
-// //       from: "Contact Form <onboarding@resend.dev>",
-// //       to: [toEmail],
-// //       subject: `New Inquiry from ${firstName} ${lastName}`,
-// //       reply_to: email,
-// //       text: `You have a new message from your website contact form.
-
-// // Name: ${firstName} ${lastName}
-// // Email: ${email}
-// // Phone: ${phone}
-
-// // Message:
-// // ${message}
-
-// // Selected Courses: ${coursesText}
-// //       `,
-// //     });
-
-// //     return NextResponse.json(data);
-// //   } catch (error) {
-// //     console.error(error); // Log the error for debugging
-// //     return NextResponse.json(
-// //       { error: "An error occurred while sending the email." },
-// //       { status: 500 }
-// //     );
-// //   }
-// // }
-
-// // app/api/send-email/route.js
-
-// // app/api/send-email/route.js
-
-// // app/api/send-email/route.js
-
 // import { NextResponse } from "next/server";
 // import { Resend } from "resend";
 
-// // This line should already be here
+// // Initialize Resend with API key from .env.local
 // const resend = new Resend(process.env.RESEND_API_KEY);
 
+// // Read recipient email from .env.local
 // const toEmail = process.env.TO_EMAIL;
 
-// console.log(resend, toEmail);
 // export async function POST(req) {
 //   try {
-//     // --- ADD THIS LINE FOR DEBUGGING ---
-//     console.log("🔑 [API] Key being used:", process.env.RESEND_API_KEY);
-//     // ------------------------------------
+//     // Log for debugging
+//     console.log("✅ Received POST request");
 
+//     // Parse request body
 //     const body = await req.json();
-//     console.log("✅ [API] Received request body:", body);
-
 //     const { firstName, lastName, email, phone, message, courses } = body;
 
-//     // ... the rest of your code remains the same ...
+//     // Log body
+//     console.log("📝 Body:", body);
 
-//     console.log("✅ [API] Sending email to:", toEmail);
+//     // Validation
+//     if (!firstName || !lastName || !email || !phone || !message) {
+//       return NextResponse.json(
+//         { error: "All fields except courses are required." },
+//         { status: 400 }
+//       );
+//     }
 
+//     // Format courses
+//     const coursesText =
+//       Array.isArray(courses) && courses.length > 0
+//         ? courses.join(", ")
+//         : "None selected";
+
+//     // Send email using Resend
 //     const data = await resend.emails.send({
-//       // ...
-//       from: "Contact Form <onboarding@resend.dev>",
+//       from: "Contact Form <asifkhan251301@gmail.com>",
+
 //       to: [toEmail],
 //       subject: `New Inquiry from ${firstName} ${lastName}`,
 //       reply_to: email,
@@ -99,25 +52,38 @@
 // Selected Courses: ${coursesText}
 //       `,
 //       html: `
-//       <p>You have a new message from your website contact form.</p>
-//       <p>Name: ${firstName} ${lastName}</p>
-//       <p>Email: ${email}</p>
-//       <p>Phone: ${phone}</p>
-//       <p>Message: ${message}</p>
-//       <p>Selected Courses: ${coursesText}</p>
+//         <p>You have a new message from your website contact form.</p>
+//         <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+//         <p><strong>Email:</strong> ${email}</p>
+//         <p><strong>Phone:</strong> ${phone}</p>
+//         <p><strong>Message:</strong> ${message}</p>
+//         <p><strong>Selected Courses:</strong> ${coursesText}</p>
 //       `,
 //     });
 
-//     console.log("✅ [API] Resend response:", data);
-
+//     // Handle errors from Resend
 //     if (data.error) {
-//       console.error("❌ [API] Resend returned an error:", data.error);
+//       console.error("❌ Resend error:", data.error);
 //       return NextResponse.json({ error: data.error.message }, { status: 500 });
 //     }
 
-//     return NextResponse.json(data);
+//     // Return success response
+//     console.log("✅ Email sent successfully:", data);
+//     return NextResponse.json({ success: true, data }, { status: 200 });
 //   } catch (error) {
-//     console.error("❌ [API] An unexpected error occurred:", error);
+//     // Catch unexpected server errors
+//     console.error("❌ Unexpected server error:", error);
+
+//     // Handle ReferenceErrors explicitly
+//     if (error instanceof ReferenceError) {
+//       return NextResponse.json(
+//         {
+//           error: `Reference error: ${error.message}`,
+//         },
+//         { status: 500 }
+//       );
+//     }
+
 //     return NextResponse.json(
 //       { error: "An unexpected error occurred." },
 //       { status: 500 }
@@ -128,60 +94,68 @@
 // app/api/send-email/route.js
 
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
-
-// Use this if you are still testing with a hardcoded key
-// const resend = new Resend('re_YourApiKeyHere');
-
-// Use this for production (reading from .env.local)
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-const toEmail = process.env.TO_EMAIL;
+import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
     const body = await req.json();
     const { firstName, lastName, email, phone, message, courses } = body;
 
-    // --- THIS IS THE MISSING LINE ---
-    // It formats the courses array into a readable string.
-    const coursesText =
-      courses.length > 0 ? courses.join(", ") : "None selected";
+    if (!firstName || !lastName || !email || !phone || !message) {
+      return NextResponse.json(
+        { error: "All fields except courses are required." },
+        { status: 400 }
+      );
+    }
 
-    const data = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
-      to: [toEmail],
+    const coursesText =
+      Array.isArray(courses) && courses.length > 0
+        ? courses.join(", ")
+        : "None selected";
+
+    // Create Nodemailer transporter
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    // Email options
+    const mailOptions = {
+      from: `"Contact Form" <${process.env.EMAIL_USER}>`,
+      to: process.env.TO_EMAIL,
       subject: `New Inquiry from ${firstName} ${lastName}`,
-      reply_to: email,
-      text: `You have a new message from your website contact form.
-      
+      text: `
+You have a new message from your website contact form.
+
 Name: ${firstName} ${lastName}
 Email: ${email}
 Phone: ${phone}
-
 Message:
 ${message}
+Selected Courses: ${coursesText}
+      `,
+      html: `
+        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Message:</strong><br />${message}</p>
+        <p><strong>Selected Courses:</strong> ${coursesText}</p>
+      `,
+    };
 
-Selected Courses: ${coursesText}`, // Now this variable is defined
-    });
+    // Send the email
+    const info = await transporter.sendMail(mailOptions);
 
-    if (data.error) {
-      return NextResponse.json({ error: data.error.message }, { status: 500 });
-    }
+    console.log("✅ Email sent:", info.response);
 
-    return NextResponse.json(data);
+    return NextResponse.json({ success: true, info }, { status: 200 });
   } catch (error) {
-    // Check if it's a ReferenceError and provide a specific message
-    if (error instanceof ReferenceError) {
-      console.error("❌ [API] Reference Error:", error);
-      return NextResponse.json(
-        { error: `A server-side variable was not defined: ${error.message}` },
-        { status: 500 }
-      );
-    }
-    console.error("❌ [API] An unexpected error occurred:", error);
+    console.error("❌ Email sending failed:", error);
     return NextResponse.json(
-      { error: "An unexpected error occurred." },
+      { error: "An unexpected error occurred while sending the email." },
       { status: 500 }
     );
   }
