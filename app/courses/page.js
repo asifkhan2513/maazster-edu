@@ -79,7 +79,7 @@ const Courses = () => {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <section className="mt-10 py-12 bg-white">
+      <section className="mt-10 py-12 bg-[#F97316]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">

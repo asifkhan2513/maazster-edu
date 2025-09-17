@@ -104,81 +104,86 @@ const Testimonials = () => {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <section className="mt-16 py-12 bg-white">
-  <div className="max-w-7xl mx-auto px-4">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-        What Our Students Say
-      </h2>
-      <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-        Hear directly from our students and partners about how our programs have transformed their careers and lives.
-      </p>
-    </div>
+      <section className="mt-16 py-12 bg-[#F97316]">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+              What Our Students Say
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+              Hear directly from our students and partners about how our programs have transformed their careers and lives.
+            </p>
+          </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {/* Testimonial 1 */}
-      <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md">
-        <p className="text-gray-700 italic mb-4">
-          "The training gave me confidence and skills to secure my first job in tech. The mentors were incredibly supportive!"
-        </p>
-        <div className="flex items-center">
-          <img
-            src="/images/student1.jpg"
-            alt="Student"
-            className="w-12 h-12 rounded-full mr-4"
-          />
-          <div>
-            <div className="font-semibold text-gray-800">Amit Sharma</div>
-            <div className="text-sm text-gray-500">Software Developer at Infosys</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md">
+              <p className="text-gray-700 italic mb-4">
+                &quot;The training gave me confidence and skills to secure my first job in tech. The mentors were incredibly supportive!&quot;
+              </p>
+              <div className="flex items-center">
+                <Image
+                  src="/images/student1.jpg"
+                  alt="Student"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 rounded-full mr-4"
+                />
+                <div>
+                  <div className="font-semibold text-gray-800">Amit Sharma</div>
+                  <div className="text-sm text-gray-500">Software Developer at Infosys</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-md">
+              <p className="text-gray-700 italic mb-4">
+                &quot;Thanks to the hands-on projects, I built a strong portfolio that impressed employers. I landed a job within weeks.&quot;
+              </p>
+              <div className="flex items-center">
+                <Image
+                  src="/images/student2.jpg"
+                  alt="Student"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 rounded-full mr-4"
+                  loading="lazy"
+                />
+                <div>
+                  <div className="font-semibold text-gray-800">Priya Verma</div>
+                  <div className="text-sm text-gray-500">Data Analyst at TCS</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl shadow-md">
+              <p className="text-gray-700 italic mb-4">
+                &quot;We have hired multiple graduates from this program. They are job-ready, skilled, and bring fresh ideas to our team.&quot;
+              </p>
+              <div className="flex items-center">
+                <Image
+                  src="/images/company1.jpg"
+                  alt="Company"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 rounded-full mr-4"
+                />
+                <div>
+                  <div className="font-semibold text-gray-800">Rohit Mehta</div>
+                  <div className="text-sm text-gray-500">HR Manager, TechCorp</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Testimonial 2 */}
-      <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-md">
-        <p className="text-gray-700 italic mb-4">
-          "Thanks to the hands-on projects, I built a strong portfolio that impressed employers. I landed a job within weeks."
-        </p>
-        <div className="flex items-center">
-          <img
-            src="/images/student2.jpg"
-            alt="Student"
-            className="w-12 h-12 rounded-full mr-4"
-          />
-          <div>
-            <div className="font-semibold text-gray-800">Priya Verma</div>
-            <div className="text-sm text-gray-500">Data Analyst at TCS</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonial 3 */}
-      <div className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl shadow-md">
-        <p className="text-gray-700 italic mb-4">
-          "We’ve hired multiple graduates from this program. They are job-ready, skilled, and bring fresh ideas to our team."
-        </p>
-        <div className="flex items-center">
-          <img
-            src="/images/company1.jpg"
-            alt="Company"
-            className="w-12 h-12 rounded-full mr-4"
-          />
-          <div>
-            <div className="font-semibold text-gray-800">Rohit Mehta</div>
-            <div className="text-sm text-gray-500">HR Manager, TechCorp</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
-      <section id="testimonials" className="py-12 bg-gray-100 overflow-hidden pt-24">
+      <section id="testimonials" className="py-12 bg-gray-100 overflow-hidden pt-18">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">What Our Students Say</h2>
-          <p className="text-gray-600 mb-8">Join thousands of successful graduates who transformed their careers</p>
-
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">Our Students </h2>
           {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {testimonials.slice(0, 6).map((item, index) => (

@@ -112,7 +112,7 @@ const Plans = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4">Need a custom plan? We've got you covered!</p>
+            <p className="text-gray-600 mb-4">Need a custom plan? We &apos;ve got you covered!</p>
             <button className="bg-white text-orange-500 border-2 border-orange-400 px-8 py-3 rounded-xl font-semibold hover:bg-orange-400 hover:text-white transition-all duration-300">
               Contact for Custom Plan
             </button>

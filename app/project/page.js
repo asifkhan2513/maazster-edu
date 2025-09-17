@@ -475,7 +475,7 @@ const Project = () => {
       <Navbar />
 
       {/* Our Impact Section */}
-      <section className="mt-16 py-12 bg-white bg-[#F97D26]">
+      <section className="mt-16 py-12  bg-[#F97D26]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 ">

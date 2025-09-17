@@ -11,8 +11,9 @@ export default function NotFound() {
                         Unauthorized Access
                     </h2>
                     <p className="text-gray-600 mb-8">
-                        Sorry, the page you are looking for doesn't exist or you don't have permission to access it.
+                        Sorry the page you are looking for doesn&apos;t exist or you don&apos;t have permission to access it.
                     </p>
+
                 </div>
 
                 <div className="space-y-4">
