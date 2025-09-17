@@ -474,7 +474,54 @@ const Project = () => {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
+      {/* Our Impact Section */}
+      <section className="mt-16 py-12 bg-white bg-[#F97D26]">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 ">
+              Our Impact
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+              See the real results of our educational programs and the success stories of our students
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl">
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">500+</div>
+              <div className="text-gray-700 font-semibold">Students Trained</div>
+              <div className="text-sm text-gray-500 mt-1">Across all programs</div>
+            </div>
+
+            <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl">
+              <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2">95%</div>
+              <div className="text-gray-700 font-semibold">Placement Rate</div>
+              <div className="text-sm text-gray-500 mt-1">Within 6 months</div>
+            </div>
+
+            <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl">
+              <div className="text-4xl md:text-5xl font-bold text-orange-600 mb-2">150+</div>
+              <div className="text-gray-700 font-semibold">Projects Completed</div>
+              <div className="text-sm text-gray-500 mt-1">Real-world applications</div>
+            </div>
+
+            <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl">
+              <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2">50+</div>
+              <div className="text-gray-700 font-semibold">Partner Companies</div>
+              <div className="text-sm text-gray-500 mt-1">Hiring our graduates</div>
+            </div>
+          </div>
+
+          {/* <div className="text-center mt-12">
+            <a
+              href="/project"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
+              View Student Projects
+            </a>
+          </div> */}
+        </div>
+      </section>
       <div className=" pt-18 pb-16">
         <div className="max-w-7xl mx-auto px-4">
           {/* Header */}

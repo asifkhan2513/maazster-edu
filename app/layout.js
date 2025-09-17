@@ -2,7 +2,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Josefin_Sans } from "next/font/google";
 import Footer from "@/app/footer/page";
-import ContactButton from "@/app/common/ContactButton";
 import WhatsAppButton from "@/app/common/WhatsAppButton";
 
 const josefin = Josefin_Sans({
@@ -10,16 +9,7 @@ const josefin = Josefin_Sans({
   display: "swap",
 });
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
 
 export const metadata = {
   title: "Maazster Edu",
@@ -37,7 +27,6 @@ export default function RootLayout({ children }) {
         className={`${josefin.className} antialiased bg-primary-950 text-primary-100 min-h-screen flex flex-col relative`}
       >
         {children}
-        <ContactButton />
         <WhatsAppButton />
         <Footer />
       </body>

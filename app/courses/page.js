@@ -79,9 +79,55 @@ const Courses = () => {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
+      <section className="mt-10 py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+              Why Choose Our Courses?
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+              At <span className="font-semibold text-orange-500">Maazster Edu</span>, our courses are designed not just to teach theory,
+              but to give you <span className="font-semibold">practical, job-ready skills</span>.
+              Every program is built with hands-on projects, mentorship, and industry-focused learning paths.
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md text-center">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Expert Mentors</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Learn from experienced professionals who bring real-world insights, coding practices,
+                and industry experience directly into the classroom.
+              </p>
+            </div>
 
-      <section id="courses" className="py-12 bg-gradient-to-br from-blue-50 to-indigo-100 pt-24">
+            <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-md text-center">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Hands-On Projects</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Work on real-world projects that simulate actual industry scenarios and help you
+                build a strong portfolio for your career.
+              </p>
+            </div>
+
+            <div className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl shadow-md text-center">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Career-Focused</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Each course is structured to prepare you for job interviews, coding tests, and
+                practical challenges in the tech industry.
+              </p>
+            </div>
+
+            <div className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl shadow-md text-center">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Flexible Learning</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Learn at your own pace with our structured modules, mentorship support,
+                and a mix of online/offline learning opportunities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="courses" className="py-10 bg-gradient-to-br from-blue-50 to-indigo-100 pt-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4 text-gray-800">OUR COURSES</h2>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">

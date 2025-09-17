@@ -52,8 +52,6 @@ const Plans = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-
-
       <section id="plans" className="py-16 bg-gradient-to-br from-gray-50 to-blue-50 pt-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4 text-gray-800">Choose Your Learning Path</h2>
