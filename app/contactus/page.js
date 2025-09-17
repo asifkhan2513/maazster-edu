@@ -1,241 +1,236 @@
-// import React from "react";
-// import Navbar from "@/app/navbar/page";
-// import {
-//   MapPin,
-//   Mail,
-//   Phone,
-//   Linkedin,
-//   Twitter,
-//   Instagram,
-//   Youtube,
-// } from "lucide-react";
-// import Link from "next/link";
-
-// export const metadata = {
-//   title: "Maazster Edu :Contact us",
-//   description: "this is course page",
-// };
-
-// const page = () => {
-//   return (
-//     <>
-//       <Navbar />
-//       <section className="bg-gray-100 py-16 px-4 mt-6">
-//         <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-md flex flex-col md:flex-row overflow-hidden">
-//           {/* Left Box - Contact Info + Map */}
-//           <div className="bg-orange-500 text-white p-6 md:w-1/2 flex flex-col justify-between">
-//             <iframe
-//               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d842.7386044920298!2d80.9937006033458!3d26.876994974556947!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3f7414b12f7%3A0xb1b9d84562a4be65!2sMaazster%20Tech!5e1!3m2!1sen!2sin!4v1754208911992!5m2!1sen!2sin"
-//               width="600"
-//               height="450"
-//               className=""
-//               allowfullscreen=""
-//               loading="lazy"
-//               referrerpolicy="no-referrer-when-downgrade"
-//             ></iframe>
-//             <div>
-//               <h2 className="text-lg font-bold mb-2">Contact Information</h2>
-//               <p className="mb-4 text-sm">
-//                 We would love to hear from you. We are here to help you with
-//                 your project.
-//               </p>
-//               <div className="space-y-2 text-sm">
-//                 <div className="flex items-center">
-//                   <MapPin className="w-4 h-4 mr-2" />
-//                   Indira nagar, Lucknow, 226016
-//                 </div>
-//                 <div className="flex items-center">
-//                   <Mail className="w-4 h-4 mr-2" />
-//                   edutech@maazstertech.in
-//                 </div>
-//                 <div className="flex items-center">
-//                   <Phone className="w-4 h-4 mr-2" />
-//                   +91 9214588441
-//                 </div>
-//               </div>
-//               {/* Social Links */}
-//               <div className="flex gap-4 mt-4 text-white">
-//                 <Link href={"https://www.instagram.com"}>
-//                   <Linkedin />
-//                 </Link>
-//                 <Link href={"twitter"}>
-//                   <Twitter />
-//                 </Link>
-//                 <Link href={"instgram"}>
-//                   <Instagram />
-//                 </Link>
-//                 <Link href={"youtube"}>
-//                   <Youtube />
-//                 </Link>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Right Box - Contact Form */}
-//           <div className="p-8 md:w-1/2 bg-white">
-//             <h2 className="text-xl font-semibold mb-6">
-//               We’re Just One Message Away from{" "}
-//               <span className="text-orange-500">Helping You Grow.</span>
-//             </h2>
-//             <form className="space-y-4">
-//               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-//                 <input
-//                   type="text"
-//                   placeholder="First Name"
-//                   className="border-b outline-none py-2 px-1"
-//                 />
-//                 <input
-//                   type="text"
-//                   placeholder="Last Name"
-//                   className="border-b outline-none py-2 px-1"
-//                 />
-//                 <input
-//                   type="email"
-//                   placeholder="Email"
-//                   className="border-b outline-none py-2 px-1"
-//                 />
-//                 <input
-//                   type="tel"
-//                   placeholder="Phone No"
-//                   className="border-b outline-none py-2 px-1"
-//                 />
-//               </div>
-//               <textarea
-//                 rows="3"
-//                 placeholder="Type your message..."
-//                 className="w-full border-b outline-none py-2 px-1"
-//               ></textarea>
-
-//               <div>
-//                 <label className="block mb-2 font-medium">Courses</label>
-//                 <div className="grid grid-cols-2 gap-2 text-orange-600 text-sm">
-//                   <label>
-//                     <input type="checkbox" className="mr-2" />
-//                     UX/UI
-//                   </label>
-//                   <label>
-//                     <input type="checkbox" className="mr-2" />
-//                     Data Analytics
-//                   </label>
-//                   <label>
-//                     <input type="checkbox" className="mr-2" />
-//                     Java
-//                   </label>
-//                   <label>
-//                     <input type="checkbox" className="mr-2" />
-//                     MERN Stack
-//                   </label>
-//                   <label>
-//                     <input type="checkbox" className="mr-2" />
-//                     AI/ML
-//                   </label>
-//                   <label>
-//                     <input type="checkbox" className="mr-2" />
-//                     Digital Marketing
-//                   </label>
-//                 </div>
-//               </div>
-
-//               <button
-//                 type="submit"
-//                 className="w-full bg-gradient-to-r from-orange-400 to-orange-500 text-white py-2 rounded-full font-semibold hover:opacity-90 transition"
-//               >
-//                 Submit
-//               </button>
-//             </form>
-//           </div>
-//         </div>
-//       </section>
-//     </>
-//   );
-// };
-
-// export default page;
-
-
-// app/contact/page.js
-import React from "react";
 import Navbar from "@/app/navbar/page";
+// import Footer from "@/app/footer/page";
 import {
-  MapPin,
-  Mail,
-  Phone,
-  Linkedin,
-  Twitter,
-  Instagram,
-  Youtube,
-} from "lucide-react";
-import Link from "next/link";
-import ContactForm from "./ContactForm"; // <-- IMPORT THE NEW COMPONENT
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaClock,
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaInstagram
+} from "react-icons/fa";
 
 export const metadata = {
-  title: "Maazster Edu :Contact us",
-  description: "this is course page",
+  title: "Contact Us - Maazster Edu",
+  description: "Get in touch with Maazster Edu for course inquiries and support",
 };
 
-const Page = () => { // Changed name to 'Page' to avoid conflict with imported 'page'
+const ContactUs = () => {
   return (
-    <>
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <section className="bg-gray-100 py-16 px-4 mt-6">
-        <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-md flex flex-col md:flex-row overflow-hidden">
-          {/* Left Box - Contact Info + Map */}
-          <div className="bg-orange-500 text-white p-6 md:w-1/2 flex flex-col justify-between">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.981882249533!2d80.9990888750439!3d26.87222537666904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399957648316c021%3A0x4a45f94191316b1!2sIndira%20Nagar%2C%20Lucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1722892929452!5m2!1sen!2sin"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-            <div>
-              <h2 className="text-lg font-bold mb-2">Contact Information</h2>
-              <p className="mb-4 text-sm">
-                We would love to hear from you. We are here to help you with
-                your project.
-              </p>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Indira nagar, Lucknow, 226016
+
+      <div className="pt-24 pb-16">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+              Contact Us
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+              Ready to start your learning journey? Get in touch with our team for course guidance,
+              enrollment support, or any questions about our programs.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h2>
+
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      placeholder="Enter your first name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      placeholder="Enter your last name"
+                    />
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  edutech@maazstertech.in
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    placeholder="Enter your email"
+                  />
                 </div>
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
-                  +91 9214588441
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    placeholder="Enter your phone number"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Course Interest
+                  </label>
+                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                    <option value="">Select a course</option>
+                    <option value="mern">MERN Full Stack</option>
+                    <option value="ai-ml">AI & Machine Learning</option>
+                    <option value="java">Java Full Stack with AI</option>
+                    <option value="data-analytics">Data Analytics with AI</option>
+                    <option value="digital-marketing">Digital Marketing</option>
+                    <option value="dsa">Data Structures & Algorithms</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    placeholder="Tell us about your learning goals..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-orange-400 to-orange-500 text-white py-3 px-6 rounded-lg font-semibold hover:from-orange-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-8">
+              {/* Contact Details */}
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">Get in Touch</h2>
+
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <FaPhone className="text-orange-500 text-lg" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800">Phone</h3>
+                      <p className="text-gray-600">+91 9214588441</p>
+                      <a href="tel:+919214588441" className="text-orange-500 hover:text-orange-600 text-sm">
+                        Call Now
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <FaEnvelope className="text-orange-500 text-lg" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800">Email</h3>
+                      <p className="text-gray-600">info@maazsteredu.com</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <FaMapMarkerAlt className="text-orange-500 text-lg" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800">Address</h3>
+                      <p className="text-gray-600">
+                        D- 1099, Sector 5, D Block, Indira Nagar<br />
+                        Lucknow, Uttar Pradesh 226016
+                        <br />
+                        India
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <FaClock className="text-orange-500 text-lg" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800">Office Hours</h3>
+                      <p className="text-gray-600">Monday - Friday: 9:00 AM - 7:00 PM</p>
+                      <p className="text-gray-600">Saturday: 10:00 AM - 5:00 PM</p>
+                      <p className="text-gray-600">Sunday: Closed</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              {/* Social Links */}
-              <div className="flex gap-4 mt-4 text-white">
-                <Link href={"https://www.instagram.com"}>
-                  <Linkedin />
-                </Link>
-                <Link href={"twitter"}>
-                  <Twitter />
-                </Link>
-                <Link href={"instgram"}>
-                  <Instagram />
-                </Link>
-                <Link href={"youtube"}>
-                  <Youtube />
-                </Link>
+
+              {/* Social Media */}
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">Follow Us</h2>
+                <div className="flex space-x-4">
+                  <a href="#" className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-colors">
+                    <FaFacebook className="text-lg" />
+                  </a>
+                  <a href="#" className="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-colors">
+                    <FaTwitter className="text-lg" />
+                  </a>
+                  <a href="#" className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                    <FaLinkedin className="text-lg" />
+                  </a>
+                  <a href="#" className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <FaInstagram className="text-lg" />
+                  </a>
+                </div>
+                <p className="text-gray-600 mt-4 text-sm">
+                  Stay updated with our latest courses, success stories, and tech industry insights.
+                </p>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="bg-gradient-to-r from-orange-400 to-orange-500 rounded-2xl p-8 text-white">
+                <h2 className="text-2xl font-bold mb-6">Why Choose Us?</h2>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold">5000+</div>
+                    <div className="text-sm opacity-90">Students Trained</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold">95%</div>
+                    <div className="text-sm opacity-90">Placement Rate</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold">50+</div>
+                    <div className="text-sm opacity-90">Industry Partners</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold">4.8★</div>
+                    <div className="text-sm opacity-90">Student Rating</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          {/* Right Box - Contact Form */}
-          {/* REPLACE the old form with the new component */}
-          <ContactForm />
-
         </div>
-      </section>
-    </>
+      </div>
+
+      {/* <Footer /> */}
+    </div>
   );
 };
 
-export default Page; // Changed name to 'Page'
+export default ContactUs;
