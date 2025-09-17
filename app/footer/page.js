@@ -88,11 +88,7 @@ const Footer = () => {
                                     Support
                                 </Link>
                             </li>
-                            <li>
-                                <Link href={PATH.CAREERS} className="text-gray-300 hover:text-orange-400 transition-colors text-sm">
-                                    Careers
-                                </Link>
-                            </li>
+
                         </ul>
                     </div>
 
@@ -125,10 +121,10 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-700 mt-8 pt-6">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        <p className="text-gray-400 text-sm">
+                        <p className="text-gray-400 text-sm ">
                             © 2025 Maazster Tech GENX PVT LTD. All Rights Reserved.
                         </p>
-                        <p className="text-orange-400 text-sm">
+                        <p className="text-orange-400 text-sm pl-24">
                             Powered By Maazstertech.com
                         </p>
                     </div>

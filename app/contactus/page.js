@@ -1,5 +1,6 @@
 import Navbar from "@/app/navbar/page";
 // import Footer from "@/app/footer/page";
+import Image from "next/image";
 import {
   FaPhone,
   FaEnvelope,
@@ -25,18 +26,52 @@ const ContactUs = () => {
         <div className="max-w-7xl mx-auto px-4">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-              Contact Us
-            </h1>
+            <div className="flex items-center justify-center mb-6">
+              <Image
+                src="/app/common/Icon.ico"
+                alt="Maazster Edu Icon"
+                width={48}
+                height={48}
+                className="mr-4"
+              />
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
+                Contact Us
+              </h1>
+            </div>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               Ready to start your learning journey? Get in touch with our team for course guidance,
               enrollment support, or any questions about our programs.
             </p>
           </div>
 
+          {/* Why Choose Us Section - Moved to Top */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-r from-orange-400 to-orange-500 rounded-2xl p-8 text-white transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+              <h2 className="text-2xl font-bold mb-6 text-center">Why Choose Us?</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="text-center transform hover:scale-110 transition-all duration-300">
+                  <div className="text-3xl font-bold">5000+</div>
+                  <div className="text-sm opacity-90">Students Trained</div>
+                </div>
+                <div className="text-center transform hover:scale-110 transition-all duration-300">
+                  <div className="text-3xl font-bold">95%</div>
+                  <div className="text-sm opacity-90">Placement Rate</div>
+                </div>
+                <div className="text-center transform hover:scale-110 transition-all duration-300">
+                  <div className="text-3xl font-bold">50+</div>
+                  <div className="text-sm opacity-90">Industry Partners</div>
+                </div>
+                <div className="text-center transform hover:scale-110 transition-all duration-300">
+                  <div className="text-3xl font-bold">4.8★</div>
+                  <div className="text-sm opacity-90">Student Rating</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:translate-x-2">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h2>
 
               <form className="space-y-6">
@@ -123,12 +158,12 @@ const ContactUs = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               {/* Contact Details */}
-              <div className="bg-white rounded-2xl shadow-xl p-8">
+              <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:-translate-x-2">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Get in Touch</h2>
 
                 <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="flex items-start space-x-4 hover:bg-gray-50 p-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 hover:bg-orange-200 transition-colors duration-300">
                       <FaPhone className="text-orange-500 text-lg" />
                     </div>
                     <div>
@@ -140,8 +175,8 @@ const ContactUs = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="flex items-start space-x-4 hover:bg-gray-50 p-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 hover:bg-orange-200 transition-colors duration-300">
                       <FaEnvelope className="text-orange-500 text-lg" />
                     </div>
                     <div>
@@ -150,8 +185,8 @@ const ContactUs = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="flex items-start space-x-4 hover:bg-gray-50 p-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 hover:bg-orange-200 transition-colors duration-300">
                       <FaMapMarkerAlt className="text-orange-500 text-lg" />
                     </div>
                     <div>
@@ -165,8 +200,8 @@ const ContactUs = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="flex items-start space-x-4 hover:bg-gray-50 p-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 hover:bg-orange-200 transition-colors duration-300">
                       <FaClock className="text-orange-500 text-lg" />
                     </div>
                     <div>
@@ -180,19 +215,19 @@ const ContactUs = () => {
               </div>
 
               {/* Social Media */}
-              <div className="bg-white rounded-2xl shadow-xl p-8">
+              <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Follow Us</h2>
                 <div className="flex space-x-4">
-                  <a href="#" className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-colors">
+                  <a href="#" className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
                     <FaFacebook className="text-lg" />
                   </a>
-                  <a href="#" className="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-colors">
+                  <a href="#" className="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
                     <FaTwitter className="text-lg" />
                   </a>
-                  <a href="#" className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                  <a href="#" className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
                     <FaLinkedin className="text-lg" />
                   </a>
-                  <a href="#" className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                  <a href="#" className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white hover:bg-pink-600 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
                     <FaInstagram className="text-lg" />
                   </a>
                 </div>
@@ -201,28 +236,7 @@ const ContactUs = () => {
                 </p>
               </div>
 
-              {/* Quick Stats */}
-              <div className="bg-gradient-to-r from-orange-400 to-orange-500 rounded-2xl p-8 text-white">
-                <h2 className="text-2xl font-bold mb-6">Why Choose Us?</h2>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold">5000+</div>
-                    <div className="text-sm opacity-90">Students Trained</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold">95%</div>
-                    <div className="text-sm opacity-90">Placement Rate</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold">50+</div>
-                    <div className="text-sm opacity-90">Industry Partners</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold">4.8★</div>
-                    <div className="text-sm opacity-90">Student Rating</div>
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>

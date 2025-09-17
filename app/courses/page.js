@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "@/app/navbar/page";
+import Image from "next/image";
 // import Footer from "@/app/footer/page";
 import {
   FaReact,
@@ -74,6 +75,30 @@ const courses = [
   },
 ];
 
+// Technology images data
+const technologies = [
+  { name: "React", src: "/app/common/a/javascript.png" },
+  { name: "Angular", src: "/app/common/a/angular.webp" },
+  { name: "Java", src: "/app/common/a/java.png" },
+  { name: "Spring Boot", src: "/app/common/a/spring-boot.png" },
+  { name: "MySQL", src: "/app/common/a/mysql.png" },
+  { name: "Docker", src: "/app/common/a/docker.webp" },
+  { name: "Git", src: "/app/common/a/git.png" },
+  { name: "GitHub", src: "/app/common/a/github.png" },
+  { name: "HTML", src: "/app/common/a/html.webp" },
+  { name: "CSS", src: "/app/common/a/css.png" },
+  { name: "Bootstrap", src: "/app/common/a/bootstrap.png" },
+  { name: "TypeScript", src: "/app/common/a/typescript.png" },
+  { name: "Figma", src: "/app/common/a/figma.png" },
+  { name: "VS Code", src: "/app/common/a/vscode.png" },
+  { name: "Postman", src: "/app/common/a/postman.png" },
+  { name: "Jenkins", src: "/app/common/a/Jenkins.png" },
+  { name: "Kafka", src: "/app/common/a/kafka.png" },
+  { name: "Hibernate", src: "/app/common/a/hibernate.svg" },
+  { name: "Maven", src: "/app/common/a/maven.png" },
+  { name: "Spring Framework", src: "/app/common/a/spring-framework.svg" },
+];
+
 const Courses = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -86,40 +111,40 @@ const Courses = () => {
               Why Choose Our Courses?
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              At <span className="font-semibold text-orange-500">Maazster Edu</span>, our courses are designed not just to teach theory,
+              At <span className="font-semibold text-white">Maazster Edu</span>, our courses are designed not just to teach theory,
               but to give you <span className="font-semibold">practical, job-ready skills</span>.
               Every program is built with hands-on projects, mentorship, and industry-focused learning paths.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md text-center">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Expert Mentors</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+            <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md text-center hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
+              <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-white">Expert Mentors</h3>
+              <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white">
                 Learn from experienced professionals who bring real-world insights, coding practices,
                 and industry experience directly into the classroom.
               </p>
             </div>
 
-            <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-md text-center">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Hands-On Projects</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+            <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-md text-center hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
+              <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-white">Hands-On Projects</h3>
+              <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white">
                 Work on real-world projects that simulate actual industry scenarios and help you
                 build a strong portfolio for your career.
               </p>
             </div>
 
-            <div className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl shadow-md text-center">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Career-Focused</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+            <div className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl shadow-md text-center hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
+              <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-white">Career-Focused</h3>
+              <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white">
                 Each course is structured to prepare you for job interviews, coding tests, and
                 practical challenges in the tech industry.
               </p>
             </div>
 
-            <div className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl shadow-md text-center">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Flexible Learning</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+            <div className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl shadow-md text-center hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
+              <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-white">Flexible Learning</h3>
+              <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white">
                 Learn at your own pace with our structured modules, mentorship support,
                 and a mix of online/offline learning opportunities.
               </p>
@@ -188,6 +213,53 @@ const Courses = () => {
                 </button>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Technologies We Teach
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Master the most in-demand technologies and tools used by top companies worldwide
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+            {technologies.map((tech, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 border border-gray-100 group"
+              >
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 mb-3 relative group-hover:animate-pulse">
+                    <Image
+                      src={tech.src}
+                      alt={tech.name}
+                      fill
+                      className="object-contain"
+                      sizes="64px"
+                    />
+                  </div>
+                  <h3 className="text-sm font-semibold text-gray-700 text-center group-hover:text-orange-500 transition-colors duration-300">
+                    {tech.name}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-6">
+              And many more cutting-edge technologies to keep you ahead in the industry!
+            </p>
+            <button className="bg-gradient-to-r from-orange-400 to-orange-500 text-white py-3 px-8 rounded-lg font-semibold hover:from-orange-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105">
+              View All Technologies
+            </button>
           </div>
         </div>
       </section>

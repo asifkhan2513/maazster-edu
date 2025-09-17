@@ -47,13 +47,7 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <a
-            href="tel:+919214588441"
-            className="text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors"
-          >
-            📞 +91 9214588441
-          </a>
-          {/* FIXED: Link is styled as a button, not nested inside one */}
+
           <Link
             href={PATH.CONTACT_US}
             className="bg-orange-400 text-white px-4 py-2 rounded-full hover:bg-orange-500 transition"
