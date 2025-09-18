@@ -117,8 +117,8 @@ const Testimonials = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md">
-              <p className="text-gray-700 italic mb-4">
+            <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+              <p className="text-gray-700 italic mb-4 group-hover:text-gray-800 transition-colors duration-300">
                 &quot;The training gave me confidence and skills to secure my first job in tech. The mentors were incredibly supportive!&quot;
               </p>
               <div className="flex items-center">
@@ -127,18 +127,18 @@ const Testimonials = () => {
                   alt="Student"
                   width={48}
                   height={48}
-                  className="w-12 h-12 rounded-full mr-4"
+                  className="w-12 h-12 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300"
                 />
                 <div>
-                  <div className="font-semibold text-gray-800">Amit Sharma</div>
-                  <div className="text-sm text-gray-500">Software Developer at Infosys</div>
+                  <div className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">Amit Sharma</div>
+                  <div className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-300">Software Developer at Infosys</div>
                 </div>
               </div>
             </div>
 
             {/* Testimonial 2 */}
-            <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-md">
-              <p className="text-gray-700 italic mb-4">
+            <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+              <p className="text-gray-700 italic mb-4 group-hover:text-gray-800 transition-colors duration-300">
                 &quot;Thanks to the hands-on projects, I built a strong portfolio that impressed employers. I landed a job within weeks.&quot;
               </p>
               <div className="flex items-center">
@@ -147,19 +147,19 @@ const Testimonials = () => {
                   alt="Student"
                   width={48}
                   height={48}
-                  className="w-12 h-12 rounded-full mr-4"
+                  className="w-12 h-12 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300"
                   loading="lazy"
                 />
                 <div>
-                  <div className="font-semibold text-gray-800">Priya Verma</div>
-                  <div className="text-sm text-gray-500">Data Analyst at TCS</div>
+                  <div className="font-semibold text-gray-800 group-hover:text-green-600 transition-colors duration-300">Priya Verma</div>
+                  <div className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-300">Data Analyst at TCS</div>
                 </div>
               </div>
             </div>
 
             {/* Testimonial 3 */}
-            <div className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl shadow-md">
-              <p className="text-gray-700 italic mb-4">
+            <div className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+              <p className="text-gray-700 italic mb-4 group-hover:text-gray-800 transition-colors duration-300">
                 &quot;We have hired multiple graduates from this program. They are job-ready, skilled, and bring fresh ideas to our team.&quot;
               </p>
               <div className="flex items-center">
@@ -168,11 +168,11 @@ const Testimonials = () => {
                   alt="Company"
                   width={48}
                   height={48}
-                  className="w-12 h-12 rounded-full mr-4"
+                  className="w-12 h-12 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300"
                 />
                 <div>
-                  <div className="font-semibold text-gray-800">Rohit Mehta</div>
-                  <div className="text-sm text-gray-500">HR Manager, TechCorp</div>
+                  <div className="font-semibold text-gray-800 group-hover:text-orange-600 transition-colors duration-300">Rohit Mehta</div>
+                  <div className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-300">HR Manager, TechCorp</div>
                 </div>
               </div>
             </div>
@@ -187,27 +187,27 @@ const Testimonials = () => {
           {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {testimonials.slice(0, 6).map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 hover:-translate-y-3 transition-all duration-300 cursor-pointer group border border-transparent hover:border-orange-200">
                 <div className="flex items-center mb-4">
                   <Image
                     src={item.image}
                     alt={item.name}
                     width={60}
                     height={60}
-                    className="object-cover w-16 h-16 rounded-full mr-4"
+                    className="object-cover w-16 h-16 rounded-full mr-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300"
                     loading="lazy"
                   />
                   <div className="text-left">
-                    <h4 className="text-lg font-semibold text-gray-800">{item.name}</h4>
-                    <p className="text-sm text-orange-500 font-medium">{item.role}</p>
-                    <div className="flex text-yellow-400 text-sm mt-1">
+                    <h4 className="text-lg font-semibold text-gray-800 group-hover:text-orange-600 transition-colors duration-300">{item.name}</h4>
+                    <p className="text-sm text-orange-500 font-medium group-hover:text-orange-600 transition-colors duration-300">{item.role}</p>
+                    <div className="flex text-yellow-400 text-sm mt-1 group-hover:scale-110 transition-transform duration-300">
                       {[...Array(item.rating)].map((_, i) => (
-                        <span key={i}>⭐</span>
+                        <span key={i} className="group-hover:animate-pulse">⭐</span>
                       ))}
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-700 italic text-sm leading-relaxed">
+                <p className="text-gray-700 italic text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
                   &quot;{item.feedback}&quot;
                 </p>
               </div>

@@ -1,3 +1,8 @@
+// COMMENTED OUT FOR DEPLOYMENT - DYNAMIC EMAIL FUNCTIONALITY DISABLED
+// This API route is commented out to avoid deployment build issues
+// Contact form is now display-only (static)
+
+/*
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
@@ -19,7 +24,7 @@ export async function POST(req) {
         : "None selected";
 
     // Create Nodemailer transporter
-    const transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransporter({
       service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
@@ -64,4 +69,18 @@ Selected Courses: ${coursesText}
       { status: 500 }
     );
   }
+}
+*/
+
+// Static response for display purposes only
+export async function POST(req) {
+  return new Response(
+    JSON.stringify({
+      message: "Contact form is currently in display mode. Please call +91 9214588441 for inquiries."
+    }),
+    {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    }
+  );
 }

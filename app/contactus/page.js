@@ -1,6 +1,7 @@
 import Navbar from "@/app/navbar/page";
 // import Footer from "@/app/footer/page";
 import Image from "next/image";
+import logo from "@/app/common/logo.png";
 import {
   FaPhone,
   FaEnvelope,
@@ -27,13 +28,13 @@ const ContactUs = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-6">
-              <Image
-                src="/app/common/Icon.ico"
+              {/* <Image
+                src="https://maazstertech.com/assets/img/logo/maazsterblack.png"
                 alt="Maazster Edu Icon"
-                width={48}
+                width={200}
                 height={48}
                 className="mr-4"
-              />
+              /> */}
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
                 Contact Us
               </h1>
@@ -69,7 +70,7 @@ const ContactUs = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 flex flex-1">
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:translate-x-2">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h2>
@@ -215,7 +216,7 @@ const ContactUs = () => {
               </div>
 
               {/* Social Media */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+              {/* <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Follow Us</h2>
                 <div className="flex space-x-4">
                   <a href="#" className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
@@ -234,7 +235,7 @@ const ContactUs = () => {
                 <p className="text-gray-600 mt-4 text-sm">
                   Stay updated with our latest courses, success stories, and tech industry insights.
                 </p>
-              </div>
+              </div> */}
 
 
             </div>

@@ -15,9 +15,11 @@ import Figma from "../common/a/figma.png"
 import VSCODE from "../common/a/vscode.png"
 import Postman from "../common/a/postman.png"
 import jenking from "../common/a/Jenkins.png"
-import Kafka from "../common/a/kafka.png"
+import Kafka from "../common/a/kafka.svg"
 import Hibernate from "../common/a/hibernate.svg"
 import Maven from "../common/a/maven.png"
+import ReactI from "../common/a/react.webp"
+import Python from "../common/a/python.png"
 // import SpringFrame from "..common/a/spring-framework.svg"
 // import Footer from "@/app/footer/page";
 import {
@@ -95,11 +97,12 @@ const courses = [
 
 // Technology images data
 const technologies = [
-  { name: "React", src: "/app/common/a/javascript.png" },
+  { name: "React", src: ReactI },
   { name: "Angular", src: Agular },
   { name: "Java", src: Java },
   { name: "Spring Boot", src: SpingBoot },
   { name: "MySQL", src: Mysql },
+  { name: "Python", src: Python },
   { name: "Docker", src: Docker },
   { name: "Git", src: Git },
   { name: "GitHub", src: GitHub },
@@ -114,6 +117,7 @@ const technologies = [
   { name: "Kafka", src: Kafka },
   { name: "Hibernate", src: Hibernate },
   { name: "Maven", src: Maven },
+  
   // { name: "Spring Framework", src: SpringFrame },
 ];
 
