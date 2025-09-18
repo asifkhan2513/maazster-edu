@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import user1 from "@/app/common/user1.jpg";
-import user2 from "@/app/common/user2.jpg";
-import user3 from "@/app/common/user3.jpg";
+import user1 from "../common/user1.jpg";
+import user2 from "../common/user2.jpg";
+import user3 from "../common/user3.jpg";
 import Navbar from "@/app/navbar/page";
 // import Footer from "@/app/footer/page";
 
@@ -117,8 +117,8 @@ const Testimonials = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
-              <p className="text-gray-700 italic mb-4 group-hover:text-gray-800 transition-colors duration-300">
+            <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
+              <p className="text-gray-700 italic mb-4 group-hover:text-gray-800 transition-colors duration-300 ">
                 &quot;The training gave me confidence and skills to secure my first job in tech. The mentors were incredibly supportive!&quot;
               </p>
               <div className="flex items-center">
@@ -137,7 +137,7 @@ const Testimonials = () => {
             </div>
 
             {/* Testimonial 2 */}
-            <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+            <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
               <p className="text-gray-700 italic mb-4 group-hover:text-gray-800 transition-colors duration-300">
                 &quot;Thanks to the hands-on projects, I built a strong portfolio that impressed employers. I landed a job within weeks.&quot;
               </p>
@@ -158,7 +158,7 @@ const Testimonials = () => {
             </div>
 
             {/* Testimonial 3 */}
-            <div className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+            <div className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
               <p className="text-gray-700 italic mb-4 group-hover:text-gray-800 transition-colors duration-300">
                 &quot;We have hired multiple graduates from this program. They are job-ready, skilled, and bring fresh ideas to our team.&quot;
               </p>
