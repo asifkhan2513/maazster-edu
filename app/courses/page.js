@@ -1,6 +1,24 @@
 import React from "react";
 import Navbar from "@/app/navbar/page";
 import Image from "next/image";
+import Java from "../common/a/java.png"
+import SpingBoot from "../common/a/spring-boot.png"
+import Mysql from "../common/a/mysql.png"
+import Docker from "../common/a/docker.webp"
+import Git from "../common/a/git.png"
+import GitHub from "../common/a/github.png"
+import HTML from "../common/a/html.webp"
+import CSS from "../common/a/css.png"
+import BootStrap from "../common/a/bootstrap.png"
+import TypScript from "../common/a/typescript.png"
+import Figma from "../common/a/figma.png"
+import VSCODE from "../common/a/vscode.png"
+import Postman from "../common/a/postman.png"
+import jenking from "../common/a/Jenkins.png"
+import Kafka from "../common/a/kafka.png"
+import Hibernate from "../common/a/hibernate.svg"
+import Maven from "../common/a/maven.png"
+// import SpringFrame from "..common/a/spring-framework.svg"
 // import Footer from "@/app/footer/page";
 import {
   FaReact,
@@ -10,7 +28,7 @@ import {
   FaChartLine,
   FaCode
 } from "react-icons/fa";
-
+import Agular from "../common/a/angular.webp"
 export const metadata = {
   title: "Maazster Edu : Courses",
   description: "this is course page",
@@ -78,25 +96,25 @@ const courses = [
 // Technology images data
 const technologies = [
   { name: "React", src: "/app/common/a/javascript.png" },
-  { name: "Angular", src: "/app/common/a/angular.webp" },
-  { name: "Java", src: "/app/common/a/java.png" },
-  { name: "Spring Boot", src: "/app/common/a/spring-boot.png" },
-  { name: "MySQL", src: "/app/common/a/mysql.png" },
-  { name: "Docker", src: "/app/common/a/docker.webp" },
-  { name: "Git", src: "/app/common/a/git.png" },
-  { name: "GitHub", src: "/app/common/a/github.png" },
-  { name: "HTML", src: "/app/common/a/html.webp" },
-  { name: "CSS", src: "/app/common/a/css.png" },
-  { name: "Bootstrap", src: "/app/common/a/bootstrap.png" },
-  { name: "TypeScript", src: "/app/common/a/typescript.png" },
-  { name: "Figma", src: "/app/common/a/figma.png" },
-  { name: "VS Code", src: "/app/common/a/vscode.png" },
-  { name: "Postman", src: "/app/common/a/postman.png" },
-  { name: "Jenkins", src: "/app/common/a/Jenkins.png" },
-  { name: "Kafka", src: "/app/common/a/kafka.png" },
-  { name: "Hibernate", src: "/app/common/a/hibernate.svg" },
-  { name: "Maven", src: "/app/common/a/maven.png" },
-  { name: "Spring Framework", src: "/app/common/a/spring-framework.svg" },
+  { name: "Angular", src: Agular },
+  { name: "Java", src: Java },
+  { name: "Spring Boot", src: SpingBoot },
+  { name: "MySQL", src: Mysql },
+  { name: "Docker", src: Docker },
+  { name: "Git", src: Git },
+  { name: "GitHub", src: GitHub },
+  { name: "HTML", src: HTML },
+  { name: "CSS", src: CSS },
+  { name: "Bootstrap", src: BootStrap },
+  { name: "TypeScript", src: TypScript },
+  { name: "Figma", src: Figma },
+  { name: "VS Code", src: VSCODE },
+  { name: "Postman", src: Postman },
+  { name: "Jenkins", src: jenking },
+  { name: "Kafka", src: Kafka },
+  { name: "Hibernate", src: Hibernate },
+  { name: "Maven", src: Maven },
+  // { name: "Spring Framework", src: SpringFrame },
 ];
 
 const Courses = () => {
