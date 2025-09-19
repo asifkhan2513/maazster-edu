@@ -1,7 +1,7 @@
-
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "@/app/navbar/page";
+import CountUp from "react-countup"
 import {
   FaReact,
   FaDatabase,
@@ -11,6 +11,8 @@ import {
   FaChartLine,
   FaGraduationCap,
   FaPlay,
+  FaChevronDown,
+  FaChevronUp,
 } from "react-icons/fa";
 
 // projects, categories (same as you provided)
@@ -73,7 +75,7 @@ const projects = [
       "Scalable educational platform backend with microservices for user management, content delivery, assessments, and real-time communication.",
     image: "/api/placeholder/400/250",
     technologies: ["Java", "Spring Boot", "Docker", "Kubernetes", "Redis"],
-    category: "Backend",
+    category: "Full Stack",
     student: "Vikash Gupta",
     course: "Java Full Stack with AI",
     youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -92,7 +94,7 @@ const projects = [
       "Facebook API",
       "Analytics",
     ],
-    category: "Digital Marketing",
+    category: "Full Stack",
     student: "Anjali Verma",
     course: "Digital Marketing",
     youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -118,7 +120,7 @@ const projects = [
       "3D virtual laboratory for physics and chemistry experiments with AR/VR support and realistic simulations for remote learning.",
     image: "/api/placeholder/400/250",
     technologies: ["Unity", "C#", "WebGL", "Three.js", "WebXR"],
-    category: "AR/VR",
+    category: "Full Stack",
     student: "Meera Joshi",
     course: "Full Stack Development",
     youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -140,26 +142,31 @@ const projects = [
   },
 ];
 
+// Reduced categories for cleaner UI
 const categories = [
   "All",
   "Full Stack",
   "AI/ML",
   "Mobile Development",
   "Data Analytics",
-  "Backend",
-  "Digital Marketing",
-  "AR/VR",
 ];
 
 const Project = () => {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
   const [selectedProject, setSelectedProject] = React.useState(null);
   const [showPreview, setShowPreview] = React.useState(false);
+  const [expandedProjects, setExpandedProjects] = useState({});
 
   const filteredProjects =
     selectedCategory === "All"
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
+
+  // Get project count for each category
+  const getCategoryCount = (category) => {
+    if (category === "All") return projects.length;
+    return projects.filter(project => project.category === category).length;
+  };
 
   const handlePreview = (project) => {
     setSelectedProject(project);
@@ -169,6 +176,18 @@ const Project = () => {
   const closePreview = () => {
     setShowPreview(false);
     setSelectedProject(null);
+  };
+
+  const toggleDescription = (index) => {
+    setExpandedProjects(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
+  const truncateText = (text, maxLength = 65) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength) + "...";
   };
 
   return (
@@ -189,25 +208,29 @@ const Project = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
             <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300"><CountUp
+                end={500} duration={3} />+</div>
               <div className="text-gray-700 font-semibold group-hover:text-blue-700 transition-colors duration-300">Students Trained</div>
               <div className="text-sm text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">Across all programs</div>
             </div>
 
             <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
-              <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform duration-300 ">95%</div>
+              <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform duration-300 "><CountUp
+                end={95} duration={3} />%</div>
               <div className="text-gray-700 font-semibold group-hover:text-green-700 transition-colors duration-300">Placement Rate</div>
               <div className="text-sm text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">Within 6 months</div>
             </div>
 
             <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
-              <div className="text-4xl md:text-5xl font-bold text-orange-600 mb-2 group-hover:scale-110 transition-transform duration-300">150+</div>
-              <div className="text-gray-700 font-semibold group-hover:text-orange-700 transition-colors duration-300">Projects Completed</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300"><CountUp
+                end={150} duration={3} />+</div>
+              <div className="text-gray-700 font-semibold group-hover:text-blue-700 transition-colors duration-300">Projects Completed</div>
               <div className="text-sm text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">Real-world applications</div>
             </div>
 
             <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
-              <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
+              <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300"><CountUp
+                end={50} duration={3} />+</div>
               <div className="text-gray-700 font-semibold group-hover:text-purple-700 transition-colors duration-300">Partner Companies</div>
               <div className="text-sm text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">Hiring our graduates</div>
             </div>
@@ -243,19 +266,35 @@ const Project = () => {
                   Categories
                 </h3>
 
-                <div className="flex flex-col gap-3">
-                  {categories.map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => setSelectedCategory(category)}
-                      className={`w-full text-left px-3 py-2 rounded-lg font-semibold transition-all duration-200 text-sm ${selectedCategory === category
-                        ? "bg-orange-500 text-white shadow"
-                        : "bg-white text-gray-700 hover:bg-orange-50 border border-gray-100"
-                        }`}
-                    >
-                      {category}
-                    </button>
-                  ))}
+                <div className="flex flex-col gap-2">
+                  {categories.map((category) => {
+                    const count = getCategoryCount(category);
+                    return (
+                      <button
+                        key={category}
+                        onClick={() => setSelectedCategory(category)}
+                        className={`group w-full text-left px-3 py-2 rounded-lg font-medium transition-all duration-200 text-sm relative overflow-hidden ${selectedCategory === category
+                          ? "bg-orange-500 text-white shadow-lg"
+                          : "bg-white text-gray-700 hover:bg-orange-50 border border-gray-100 hover:border-orange-200"
+                          }`}
+                      >
+                        <div className="flex justify-between items-center">
+                          <span>{category}</span>
+                          <span className={`text-xs px-2 py-1 rounded-full transition-all duration-200 ${selectedCategory === category
+                            ? "bg-white bg-opacity-20 text-white"
+                            : "bg-gray-100 text-gray-600 group-hover:bg-orange-100 group-hover:text-orange-600"
+                            }`}>
+                            {count}
+                          </span>
+                        </div>
+
+                        {/* Hover tooltip */}
+                        <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                          {count} project{count !== 1 ? 's' : ''} available
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </aside>
@@ -280,78 +319,108 @@ const Project = () => {
                 </div>
               </div>
 
-              {/* Projects Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                {filteredProjects.map((project, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-4 overflow-hidden cursor-pointer group border border-transparent hover:border-orange-200"
-                  >
-                    {/* Project Image/Icon */}
-                    <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center group-hover:from-orange-100 group-hover:to-pink-100 transition-all duration-300">
-                      <div className="text-6xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">{project.icon}</div>
-                    </div>
+              {/* Projects Grid - Smaller Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {filteredProjects.map((project, index) => {
+                  const isExpanded = expandedProjects[index];
+                  const shouldTruncate = project.description.length > 100;
 
-                    {/* Project Content */}
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-xs font-semibold group-hover:bg-orange-200 group-hover:scale-105 transition-all duration-300">
-                          {project.category}
-                        </span>
-                        <div className="flex space-x-2">
+                  return (
+                    <div
+                      key={index}
+                      className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-102 hover:-translate-y-1 overflow-hidden group border border-transparent hover:border-orange-200"
+                    >
+                      {/* Project Image/Icon - Smaller */}
+                      <div className="h-32 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center group-hover:from-orange-100 group-hover:to-pink-100 transition-all duration-300">
+                        <div className="text-4xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">{project.icon}</div>
+                      </div>
+
+                      {/* Project Content - Compact */}
+                      <div className="p-4">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="px-2 py-1 bg-orange-100 text-orange-600 rounded-full text-xs font-medium group-hover:bg-orange-200 transition-all duration-300">
+                            {project.category}
+                          </span>
                           <a
                             href={project.live}
                             className="text-gray-600 hover:text-orange-500 group-hover:scale-110 transition-all duration-300"
                             title="View Live Demo"
                           >
-                            <FaExternalLinkAlt className="text-lg" />
+                            <FaExternalLinkAlt className="text-sm" />
                           </a>
                         </div>
-                      </div>
 
-                      <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors duration-300">
-                        {project.title}
-                      </h3>
+                        <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-orange-600 transition-colors duration-300 line-clamp-2">
+                          {project.title}
+                        </h3>
 
-                      <p className="text-gray-600 text-sm mb-4 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                        {project.description}
-                      </p>
-
-                      {/* Technologies */}
-                      <div className="mb-4">
-                        <div className="flex flex-wrap gap-2">
-                          {project.technologies.map((tech, techIndex) => (
-                            <span
-                              key={techIndex}
-                              className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs group-hover:bg-orange-50 group-hover:text-orange-700 group-hover:scale-105 transition-all duration-300"
+                        {/* Description with Read More */}
+                        <div className="text-gray-600 text-sm mb-3 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                          <p>
+                            {shouldTruncate && !isExpanded
+                              ? truncateText(project.description)
+                              : project.description
+                            }
+                          </p>
+                          {shouldTruncate && (
+                            <button
+                              onClick={() => toggleDescription(index)}
+                              className="text-orange-500 hover:text-orange-600 text-xs font-medium mt-1 flex items-center gap-1 transition-colors duration-200"
                             >
-                              {tech}
-                            </span>
-                          ))}
+                              {isExpanded ? (
+                                <>
+                                  Read Less <FaChevronUp className="text-xs" />
+                                </>
+                              ) : (
+                                <>
+                                  Read More <FaChevronDown className="text-xs" />
+                                </>
+                              )}
+                            </button>
+                          )}
                         </div>
-                      </div>
 
-                      {/* Student Info */}
-                      <div className="border-t pt-4">
-                        <div className="flex justify-between items-center text-sm">
-                          <div>
-                            <p className="font-semibold text-gray-800 group-hover:text-orange-600 transition-colors duration-300">
-                              {project.student}
-                            </p>
-                            <p className="text-gray-500 group-hover:text-gray-600 transition-colors duration-300">{project.course}</p>
+                        {/* Technologies - Compact */}
+                        <div className="mb-3">
+                          <div className="flex flex-wrap gap-1">
+                            {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs group-hover:bg-orange-50 group-hover:text-orange-700 transition-all duration-300"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                            {project.technologies.length > 3 && (
+                              <span className="px-2 py-1 bg-gray-200 text-gray-600 rounded text-xs">
+                                +{project.technologies.length - 3}
+                              </span>
+                            )}
                           </div>
-                          <button
-                            onClick={() => handlePreview(project)}
-                            className="bg-orange-500 text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-orange-600 transition-all duration-300 flex items-center gap-1 group-hover:scale-110 group-hover:shadow-lg"
-                          >
-                            <FaPlay className="text-xs" />
-                            Preview
-                          </button>
+                        </div>
+
+                        {/* Student Info - Compact */}
+                        <div className="border-t pt-3">
+                          <div className="flex justify-between items-center text-xs">
+                            <div className="flex-1 min-w-0">
+                              <p className="font-semibold text-gray-800 group-hover:text-orange-600 transition-colors duration-300 truncate">
+                                {project.student}
+                              </p>
+                              <p className="text-gray-500 group-hover:text-gray-600 transition-colors duration-300 truncate">{project.course}</p>
+                            </div>
+                            <button
+                              onClick={() => handlePreview(project)}
+                              className="bg-orange-500 text-white px-3 py-1.5 rounded-md text-xs font-medium hover:bg-orange-600 transition-all duration-300 flex items-center gap-1 group-hover:scale-105 ml-2"
+                            >
+                              <FaPlay className="text-xs" />
+                              View
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
 
                 {filteredProjects.length === 0 && (
                   <div className="col-span-full bg-white rounded-2xl shadow p-8 text-center">
@@ -408,7 +477,7 @@ const Project = () => {
                   height="100%"
                   src={selectedProject.youtube.replace('watch?v=', 'embed/')}
                   title={selectedProject.title}
-                  frameBorder="0"
+                  style={{ border: 'none' }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="rounded-lg"

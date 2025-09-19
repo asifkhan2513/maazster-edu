@@ -1,11 +1,10 @@
 import React from "react";
 import Navbar from "@/app/navbar/page";
-// import Footer from "@/app/footer/page";
 
 const plans = [
   {
     name: "SUMMER TRAINING",
-    price: "RS.6500 ",
+    // price: "RS.6500 ",
     features: [
       "5 Hour Daily Classes",
       "Recovery Class For Each Session",
@@ -17,7 +16,7 @@ const plans = [
   },
   {
     name: "INDUSTRIAL TRAINING",
-    price: "RS.15000 ",
+    // price: "RS.15000 ",
     features: [
       "Specialized Courses",
       "Increases Practical Knowledge",
@@ -29,7 +28,7 @@ const plans = [
   },
   {
     name: "JOB-ORIENTED TRAINING",
-    price: "RS.30000 ",
+    // price: "RS.30000 ",
     features: [
       "Job Placement Assistance",
       "Interview Preparation",
@@ -82,7 +81,7 @@ const Plans = () => {
                   </h3>
                   <div className="mb-6">
                     <span className="text-4xl font-bold text-orange-500">{plan.price}</span>
-                    <span className="text-gray-500 ml-2">/ course</span>
+                    <span className="text-gray-500 ml-2"></span>
                   </div>
                 </div>
 

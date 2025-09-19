@@ -20,6 +20,9 @@ import Hibernate from "../common/a/hibernate.svg"
 import Maven from "../common/a/maven.png"
 import ReactI from "../common/a/react.webp"
 import Python from "../common/a/python.png"
+// import rightBanner from "@/app/common/banner-right-dec.png";
+// import leftBanner from "@/app/common/banner-left-dec.png";
+// import Banner from "@/app/common/banner.png";
 // import SpringFrame from "..common/a/spring-framework.svg"
 // import Footer from "@/app/footer/page";
 import {
@@ -117,7 +120,7 @@ const technologies = [
   { name: "Kafka", src: Kafka },
   { name: "Hibernate", src: Hibernate },
   { name: "Maven", src: Maven },
-  
+
   // { name: "Spring Framework", src: SpringFrame },
 ];
 
@@ -125,6 +128,53 @@ const Courses = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
+
+      {/* <div className="container mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-between mt-2 px-4 sm:px-6 lg:px-8 min-h-[500px] lg:min-h-[600px]">
+          <div className="w-full lg:w-1/2 relative text-center lg:text-left mb-8 lg:mb-0 z-10">
+            <div className="hidden lg:block absolute -top-10 -left-10 opacity-20">
+              <Image
+                className="h-[150px] w-[150px] xl:h-[200px] xl:w-[200px] object-contain"
+                src={leftBanner}
+                alt="leftBanner"
+                loading="lazy"
+              />
+            </div>
+            <p className="text-gray-400 text-base sm:text-lg lg:text-xl mb-4 animate-fade-in">
+              Welcome to our EduLab
+            </p>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+              Best Place To Learn
+              <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold animate-pulse text-orange-500 mt-2">
+                MERN Full Stack with AI
+              </span>
+
+            </h1>
+            <button className="bg-orange-400 hover:bg-orange-500 text-white text-base sm:text-lg lg:text-xl px-6 sm:px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto">
+              Join Now
+            </button>
+          </div>
+
+          <div className="w-full lg:w-1/2 flex justify-center relative">
+            <div className="relative flex justify-center items-center">
+              <div className="hidden lg:block absolute -top-10 -right-10 opacity-20">
+                <Image
+                  className="h-[150px] w-[150px] xl:h-[200px] xl:w-[200px] object-contain"
+                  src={rightBanner}
+                  alt="rightBanner"
+                />
+              </div>
+              <Image
+                src={Banner}
+                alt="banner"
+                className="w-[200px] h-[320px] sm:w-[250px] sm:h-[400px] md:w-[280px] md:h-[450px] lg:w-[300px] lg:h-[520px] object-contain"
+                loading="lazy"
+              // priority
+              />
+            </div>
+          </div>
+        </div>
+      </div> */}
 
       <section className="mt-10 py-12 bg-[#F97316]">
         <div className="max-w-7xl mx-auto px-4">
