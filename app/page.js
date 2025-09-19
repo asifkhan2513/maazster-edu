@@ -5,134 +5,200 @@ import Plans from "@/app/plans/page";
 import Banner from "@/app/common/banner.png";
 import TestimonialsSection from "@/app/common/TestimonialsSection";
 import TypedAnimation from "@/app/components/TypedAnimation";
+import AnimatedText from "@/app/components/AnimatedText";
+import AnimatedContainer from "@/app/components/AnimatedContainer";
 
 import { FaUserGroup } from "react-icons/fa6";
 import { ChevronsLeftRightEllipsis } from "lucide-react";
 import BannerSection from "./banner";
-// Project is now a separate page at /project
 
 export default function Home() {
   return (
-    <div className="no-scrollbar overflow-auto  lg:pt-24">
+    <div className="min-h-screen">
       <Navbar />
-      <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 lg:px-8 min-h-[300px] lg:min-h-[300px]">
-          <div className="w-full lg:w-1/2 relative text-center lg:text-left mb-8 lg:mb-0 z-10">
-            {/* <div className="hidden lg:block absolute -top-10 -left-10 opacity-20">
-              <Image
-                className="h-[150px] w-[150px] xl:h-[200px] xl:w-[200px] object-contain"
-                src={leftBanner}
-                alt="leftBanner"
-                loading="lazy"
-              />
-            </div> */}
-            <p className="text-black text-base sm:text-lg lg:text-xl mb-4 animate-fade-in">
-              Welcome to our EduLab
-            </p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-              Best Place To Learn
-              <span className="block mt-2">
-                <TypedAnimation />
-              </span>
-            </h1>
-            <button className="bg-orange-400 hover:bg-orange-500 text-white text-base sm:text-lg lg:text-xl px-6 sm:px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto">
-              Join Now
-            </button>
-          </div>
 
-          <div className="w-full lg:w-1/2 flex justify-center relative">
-            <div className="relative flex justify-center items-center">
-              {/* <div className="hidden lg:block absolute -top-10 -right-10 opacity-20">
-                <Image
-                  className="h-[150px] w-[150px] xl:h-[200px] xl:w-[200px] object-contain"
-                  src={rightBanner}
-                  alt="rightBanner"
-                />
-              </div> */}
-              <Image
-                src={Banner}
-                alt="banner"
-                className="w-[200px] h-[320px] sm:w-[250px] sm:h-[400px] md:w-[280px] md:h-[450px] lg:w-[300px] lg:h-[520px] object-contain"
-                loading="lazy"
-              // priority
-              />
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-orange-50 pt-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+
+            {/* Left Content */}
+            <AnimatedContainer
+              className="w-full lg:w-1/2 text-center lg:text-left space-y-6"
+              animationType="fadeLeft"
+              stagger={0.2}
+            >
+              <AnimatedText
+                className="text-orange-500 text-lg sm:text-xl lg:text-2xl font-semibold tracking-wide uppercase"
+                animationType="fadeUp"
+                delay={0.2}
+              >
+                Welcome to our EduLab
+              </AnimatedText>
+
+              <div className="space-y-4">
+                <AnimatedText
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight"
+                  animationType="reveal"
+                  delay={0.4}
+                >
+                  Best Place To Learn
+                </AnimatedText>
+
+                <div className="mt-6">
+                  <TypedAnimation />
+                </div>
+              </div>
+
+              <AnimatedText
+                className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+                animationType="fadeUp"
+                delay={0.8}
+              >
+                Transform your career with cutting-edge technology education. Master MERN Stack, AI, and modern web development with industry experts.
+              </AnimatedText>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
+                <button className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-lg font-semibold px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg">
+                  <span className="flex items-center justify-center gap-2">
+                    Start Learning Now
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </button>
+
+                <button className="group border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white text-lg font-semibold px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105">
+                  <span className="flex items-center justify-center gap-2">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Watch Demo
+                  </span>
+                </button>
+              </div>
+            </AnimatedContainer>
+
+            {/* Right Content - Hero Image */}
+            <div className="w-full lg:w-1/2 flex justify-center">
+              <div className="relative">
+                {/* Floating Elements */}
+                <div className="absolute -top-10 -left-10 w-20 h-20 bg-orange-200 rounded-full opacity-60 animate-pulse"></div>
+                <div className="absolute -bottom-10 -right-10 w-16 h-16 bg-blue-200 rounded-full opacity-60 animate-pulse" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute top-1/2 -right-20 w-12 h-12 bg-green-200 rounded-full opacity-60 animate-pulse" style={{ animationDelay: '2s' }}></div>
+
+                <div className="relative z-10 transform hover:scale-105 transition-transform duration-500">
+                  <Image
+                    src={Banner}
+                    alt="Learning Platform Banner"
+                    className="w-[300px] h-[480px] sm:w-[350px] sm:h-[560px] md:w-[400px] md:h-[640px] lg:w-[450px] lg:h-[720px] object-contain drop-shadow-2xl"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="container mx-auto">
-        <div className="flex flex-col items-center justify-center mt-12 lg:mt-24 px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4">
-            Empowering Your Learning Journey
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 text-center max-w-2xl">
-            Explore the different ways we can help you learn and grow in tech
-          </p>
+
+        {/* Background Decorations */}
+        <div className="absolute top-20 left-10 w-2 h-2 bg-orange-400 rounded-full opacity-60"></div>
+        <div className="absolute top-40 right-20 w-3 h-3 bg-blue-400 rounded-full opacity-60"></div>
+        <div className="absolute bottom-40 left-20 w-2 h-2 bg-green-400 rounded-full opacity-60"></div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Section Header */}
+          <AnimatedContainer
+            className="text-center mb-16 lg:mb-24"
+            animationType="fadeUp"
+            stagger={0.2}
+          >
+            <AnimatedText
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+              animationType="reveal"
+            >
+              Empowering Your Learning Journey
+            </AnimatedText>
+            <AnimatedText
+              className="text-xl sm:text-2xl md:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+              animationType="fadeUp"
+              delay={0.3}
+            >
+              Explore the different ways we can help you learn and grow in tech with our comprehensive programs
+            </AnimatedText>
+          </AnimatedContainer>
+
+          {/* Feature Cards */}
+          <AnimatedContainer
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+            animationType="scale"
+            stagger={0.15}
+          >
+            {/* Card 1 */}
+            <div className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl p-8 lg:p-10 transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-orange-500 hover:to-orange-600 hover:text-white border border-gray-100">
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 bg-blue-100 group-hover:bg-white group-hover:bg-opacity-20 rounded-2xl flex items-center justify-center transition-all duration-300">
+                  <svg className="w-10 h-10 text-blue-500 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-center">Online Live Classes</h3>
+              <p className="text-center leading-relaxed opacity-90">
+                Interactive online sessions with real-time Q&A and project-based learning, accessible from anywhere in the world.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl p-8 lg:p-10 transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-orange-500 hover:to-orange-600 hover:text-white border border-gray-100">
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 bg-green-100 group-hover:bg-white group-hover:bg-opacity-20 rounded-2xl flex items-center justify-center transition-all duration-300">
+                  <FaUserGroup className="text-3xl text-green-500 group-hover:text-white transition-colors" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-center">In-Person Workshops</h3>
+              <p className="text-center leading-relaxed opacity-90">
+                Hands-on workshops designed to provide practical experience and collaborative learning in a classroom setting.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl p-8 lg:p-10 transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-orange-500 hover:to-orange-600 hover:text-white border border-gray-100">
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 bg-purple-100 group-hover:bg-white group-hover:bg-opacity-20 rounded-2xl flex items-center justify-center transition-all duration-300">
+                  <svg className="w-10 h-10 text-purple-500 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-center">1-on-1 Mentorship</h3>
+              <p className="text-center leading-relaxed opacity-90">
+                Personalized guidance and support tailored to your learning goals, with direct feedback and career advice.
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl p-8 lg:p-10 transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-orange-500 hover:to-orange-600 hover:text-white border border-gray-100">
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 bg-yellow-100 group-hover:bg-white group-hover:bg-opacity-20 rounded-2xl flex items-center justify-center transition-all duration-300">
+                  <ChevronsLeftRightEllipsis className="text-3xl text-yellow-500 group-hover:text-white transition-colors" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-center">Custom Course Creation</h3>
+              <p className="text-center leading-relaxed opacity-90">
+                Development of custom courses and learning paths to suit your unique needs and interests in technology.
+              </p>
+            </div>
+          </AnimatedContainer>
         </div>
 
-        {/* card */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6 lg:p-8 mt-8 lg:mt-12">
-          {/* <!-- Card 1 --> */}
-          <div className="bg-white rounded-2xl lg:rounded-3xl shadow-lg lg:shadow-2xl p-4 sm:p-6 hover:scale-105 lg:hover:scale-110 duration-500 hover:bg-orange-500 hover:text-white group">
-            <div className="flex justify-center mb-3 sm:mb-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-white group-hover:bg-opacity-20">
-                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-center">Online Live Classes</h3>
-            <p className="text-center text-xs sm:text-sm leading-relaxed">
-              Interactive online sessions with real-time Q&A and project-based
-              learning, accessible from anywhere.
-            </p>
-          </div>
-
-          {/* <!-- Card 2 --> */}
-          <div className="bg-white rounded-2xl lg:rounded-3xl shadow-lg lg:shadow-2xl p-4 sm:p-6 hover:scale-105 lg:hover:scale-110 duration-500 hover:bg-orange-500 hover:text-white group">
-            <div className="flex justify-center mb-3 sm:mb-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-white group-hover:bg-opacity-20">
-                <FaUserGroup className="text-xl sm:text-2xl text-green-500 group-hover:text-white" />
-              </div>
-            </div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-center">In-Person Workshops</h3>
-            <p className="text-center text-xs sm:text-sm leading-relaxed">
-              Hands-on workshops designed to provide practical experience and
-              collaborative learning in a classroom setting.
-            </p>
-          </div>
-
-          {/* <!-- Card 3 --> */}
-          <div className="bg-white rounded-2xl lg:rounded-3xl shadow-lg lg:shadow-2xl p-4 sm:p-6 hover:scale-105 lg:hover:scale-110 duration-500 hover:bg-orange-500 hover:text-white group">
-            <div className="flex justify-center mb-3 sm:mb-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-white group-hover:bg-opacity-20">
-                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-purple-500 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-center">1-on-1 Mentorship</h3>
-            <p className="text-center text-xs sm:text-sm leading-relaxed">
-              Personalized guidance and support tailored to your learning goals,
-              with direct feedback and career advice.
-            </p>
-          </div>
-
-          {/* <!-- Card 4 --> */}
-          <div className="bg-white rounded-2xl lg:rounded-3xl shadow-lg lg:shadow-2xl p-4 sm:p-6 hover:scale-105 lg:hover:scale-110 duration-500 hover:bg-orange-500 hover:text-white group">
-            <div className="flex justify-center mb-3 sm:mb-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center group-hover:bg-white group-hover:bg-opacity-20">
-                <ChevronsLeftRightEllipsis className="text-xl sm:text-2xl text-yellow-500 group-hover:text-white" />
-              </div>
-            </div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-center">Custom Course Creation</h3>
-            <p className="text-center text-xs sm:text-sm leading-relaxed">
-              Development of custom courses and learning paths to suit your unique
-              needs and interests in technology.
-            </p>
-          </div>
-        </div>
-      </div>
+        {/* Background Elements */}
+        <div className="absolute top-20 left-10 w-4 h-4 bg-orange-200 rounded-full opacity-30"></div>
+        <div className="absolute bottom-20 right-10 w-6 h-6 bg-blue-200 rounded-full opacity-30"></div>
+      </section>
 
       <section className="mt-12 lg:mt-16">
         <Courses />
@@ -148,21 +214,36 @@ export default function Home() {
         </div>
 
         {/* Contact Section */}
-        <section className="mt-16 lg:mt-20 py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+        <section className="py-20 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-orange-50 relative overflow-hidden">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             {/* Section Header */}
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+            <AnimatedContainer
+              className="text-center mb-16 lg:mb-24"
+              animationType="fadeUp"
+              stagger={0.2}
+            >
+              <AnimatedText
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+                animationType="reveal"
+              >
                 Get In Touch With Us
-              </h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Ready to start your journey in tech? Contact us today and let&apos;s discuss how we can help you achieve your learning goals with our comprehensive MERN Full Stack and AI programs.
-              </p>
-            </div>
+              </AnimatedText>
+              <AnimatedText
+                className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+                animationType="fadeUp"
+                delay={0.3}
+              >
+                Ready to start your journey in tech? Contact us today and let's discuss how we can help you achieve your learning goals with our comprehensive MERN Full Stack and AI programs.
+              </AnimatedText>
+            </AnimatedContainer>
 
-            <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+            <AnimatedContainer
+              className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl mx-auto"
+              animationType="scale"
+              stagger={0.2}
+            >
               {/* Contact Form */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10">
+              <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 border border-gray-100">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Send us a Message</h3>
 
                 <form className="space-y-6">
@@ -253,7 +334,7 @@ export default function Home() {
               {/* Contact Info & Map */}
               <div className="space-y-8">
                 {/* Contact Information */}
-                <div className="bg-white rounded-2xl shadow-xl p-8">
+                <div className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
                   <h3 className="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
 
                   <div className="space-y-6">
@@ -267,7 +348,7 @@ export default function Home() {
                       <div>
                         <h4 className="font-semibold text-gray-800 mb-1">Address</h4>
                         <p className="text-gray-600">
-                          D- 1099, Sector 5, D Block, Indira Nagar,
+                          D- 1099, Sector 5, D Block, Indira Nagar,<br />
                           Lucknow, Uttar Pradesh 226016
                         </p>
                       </div>
@@ -294,7 +375,6 @@ export default function Home() {
                       <div>
                         <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
                         <p className="text-gray-600">info@maazsteredu.com</p>
-                        {/* <p className="text-gray-600">admissions@maazsteredu.com</p> */}
                       </div>
                     </div>
 
@@ -315,13 +395,13 @@ export default function Home() {
                 </div>
 
                 {/* Google Map */}
-                <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
                   <div className="p-6 pb-0">
                     <h3 className="text-xl font-bold text-gray-800 mb-4">Find Us Here</h3>
                   </div>
                   <div className="h-80">
                     <iframe
-                      src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.844476148093!2d80.99153457433755!3d26.876681876668616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3f7414b12f7%3A0xb1b9d84562a4be65!2sMaazster%20Tech!5e0!3m2!1sen!2sin!4v1758262123410!5m2!1sen!2sin"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.844476148093!2d80.99153457433755!3d26.876681876668616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3f7414b12f7%3A0xb1b9d84562a4be65!2sMaazster%20Tech!5e0!3m2!1sen!2sin!4v1758262123410!5m2!1sen!2sin"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -333,31 +413,49 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </AnimatedContainer>
 
             {/* Additional Info Section */}
-            <div className="mt-16 text-center">
-              <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Why Choose Maazster Edu?</h3>
-                <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                  At Maazster Edu, we&apos;re committed to transforming careers through cutting-edge technology education. Our comprehensive MERN Full Stack with AI program combines hands-on learning with industry-relevant projects, ensuring you&lsquo;re job-ready from day one.
-                </p>
-                <div className="grid md:grid-cols-3 gap-6 text-center">
-                  <div>
-                    <div className="text-3xl font-bold text-orange-500 mb-2">500+</div>
-                    <div className="text-gray-700">Students Placed</div>
+            <AnimatedContainer
+              className="mt-20 lg:mt-32 text-center"
+              animationType="fadeUp"
+              delay={0.5}
+            >
+              <div className="bg-white rounded-3xl shadow-2xl p-12 lg:p-16 max-w-6xl mx-auto border border-gray-100">
+                <AnimatedText
+                  className="text-3xl md:text-4xl font-bold text-gray-800 mb-6"
+                  animationType="reveal"
+                >
+                  Why Choose Maazster Edu?
+                </AnimatedText>
+                <AnimatedText
+                  className="text-xl text-gray-600 leading-relaxed mb-12 max-w-4xl mx-auto"
+                  animationType="fadeUp"
+                  delay={0.2}
+                >
+                  At Maazster Edu, we're committed to transforming careers through cutting-edge technology education. Our comprehensive MERN Full Stack with AI program combines hands-on learning with industry-relevant projects, ensuring you're job-ready from day one.
+                </AnimatedText>
+                <AnimatedContainer
+                  className="grid md:grid-cols-3 gap-8 text-center"
+                  animationType="scale"
+                  stagger={0.1}
+                  delay={0.4}
+                >
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100">
+                    <div className="text-4xl md:text-5xl font-bold text-orange-500 mb-3">500+</div>
+                    <div className="text-lg font-semibold text-gray-700">Students Placed</div>
                   </div>
-                  <div>
-                    <div className="text-3xl font-bold text-orange-500 mb-2">95%</div>
-                    <div className="text-gray-700">Success Rate</div>
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100">
+                    <div className="text-4xl md:text-5xl font-bold text-blue-500 mb-3">95%</div>
+                    <div className="text-lg font-semibold text-gray-700">Success Rate</div>
                   </div>
-                  <div>
-                    <div className="text-3xl font-bold text-orange-500 mb-2">50+</div>
-                    <div className="text-gray-700">Industry Partners</div>
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-green-50 to-green-100">
+                    <div className="text-4xl md:text-5xl font-bold text-green-500 mb-3">50+</div>
+                    <div className="text-lg font-semibold text-gray-700">Industry Partners</div>
                   </div>
-                </div>
+                </AnimatedContainer>
               </div>
-            </div>
+            </AnimatedContainer>
           </div>
         </section>
       </section>
