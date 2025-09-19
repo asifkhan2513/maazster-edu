@@ -156,7 +156,7 @@ export default function Home() {
                 Get In Touch With Us
               </h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Ready to start your journey in tech? Contact us today and let's discuss how we can help you achieve your learning goals with our comprehensive MERN Full Stack and AI programs.
+                Ready to start your journey in tech? Contact us today and let&apos;s discuss how we can help you achieve your learning goals with our comprehensive MERN Full Stack and AI programs.
               </p>
             </div>
 
@@ -340,7 +340,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Why Choose Maazster Edu?</h3>
                 <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                  At Maazster Edu, we're committed to transforming careers through cutting-edge technology education. Our comprehensive MERN Full Stack with AI program combines hands-on learning with industry-relevant projects, ensuring you're job-ready from day one.
+                  At Maazster Edu, we&apos;re committed to transforming careers through cutting-edge technology education. Our comprehensive MERN Full Stack with AI program combines hands-on learning with industry-relevant projects, ensuring you&lsquo;re job-ready from day one.
                 </p>
                 <div className="grid md:grid-cols-3 gap-6 text-center">
                   <div>
