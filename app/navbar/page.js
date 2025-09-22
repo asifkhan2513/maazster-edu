@@ -13,7 +13,7 @@ const navItems = [
   { label: "COURSES", href: PATH.COURSES },
   { label: "PLANS", href: PATH.PLANS },
   { label: "TESTIMONIALS", href: PATH.TESTIMONIALS },
-  { label: "Projects", href: PATH.PROJECTS }
+  { label: "PROJECTS", href: PATH.PROJECTS },
 ];
 
 const Navbar = () => {
@@ -41,8 +41,9 @@ const Navbar = () => {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-sm font-semibold hover:text-orange-500 transition-colors ${pathname === item.href ? "text-orange-500" : "text-black"
-                }`}
+              className={`text-sm font-semibold hover:text-orange-500 transition-colors ${
+                pathname === item.href ? "text-orange-500" : "text-black"
+              }`}
             >
               {item.label}
             </Link>

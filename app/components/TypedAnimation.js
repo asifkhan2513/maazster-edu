@@ -41,7 +41,7 @@ const TypedAnimation = () => {
     return (
         <span
             ref={el}
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-orange-500 mt-2 min-h-[2em] inline-block"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-orange-500 mt-2 min-h-[1.5em] sm:min-h-[2em] inline-block"
         />
     );
 };

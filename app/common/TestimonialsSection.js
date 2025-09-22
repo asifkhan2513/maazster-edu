@@ -32,12 +32,26 @@ const testimonials = [
 
 const TestimonialsSection = () => {
     return (
-        <section id="testimonials" className="py-16 bg-gray-100">
+        <section id="testimonials" className="py-16 md:py-20 lg:py-24 bg-gray-100">
             <div className="max-w-7xl mx-auto px-4 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">What Our Students Say</h2>
-                <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
-                    Join thousands of successful graduates who transformed their careers with our industry-focused programs
-                </p>
+                {/* Stylish Header */}
+                <div className="mb-12 md:mb-16 lg:mb-20">
+                    <div className="inline-block">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 relative">
+                            <span className="bg-gradient-to-r from-pink-500 via-red-600 to-orange-700 bg-clip-text text-transparent">
+                                What Our
+                            </span>
+                            <br />
+                            <span className="text-gray-900 drop-shadow-lg">Students Say</span>
+
+                            {/* Decorative underline */}
+                            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 md:w-32 lg:w-40 h-1 bg-gradient-to-r from-pink-400 to-orange-600 rounded-full shadow-lg"></div>
+                        </h2>
+                    </div>
+                    <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mt-6 md:mt-8">
+                        Join thousands of successful graduates who transformed their careers with our industry-focused programs
+                    </p>
+                </div>
 
                 {/* Testimonials Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

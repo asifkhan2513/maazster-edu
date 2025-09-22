@@ -4,7 +4,7 @@ import user1 from "../common/user1.jpg";
 import user2 from "../common/user2.jpg";
 import user3 from "../common/user3.jpg";
 import Navbar from "@/app/navbar/page";
-// import Footer from "@/app/footer/page";
+import testimonialTop from "../common/testimonialTop.png";
 
 const testimonials = [
   {
@@ -26,70 +26,80 @@ const testimonials = [
   {
     name: "Sneha Kapoor",
     role: "Digital Marketing Manager at Byju's",
-    feedback: "Best digital marketing course with practical SEO and social media strategies. The mentorship program was exceptional. Now leading marketing at India's top edtech!",
+    feedback:
+      "Best digital marketing course with practical SEO and social media strategies. The mentorship program was exceptional. Now leading marketing at India's top edtech!",
     image: user3,
     rating: 5,
   },
   {
     name: "Arjun Patel",
     role: "Java Developer at Infosys",
-    feedback: "The Java Full Stack with AI course exceeded my expectations. The Spring Boot and microservices modules were incredibly detailed. Perfect for enterprise development!",
+    feedback:
+      "The Java Full Stack with AI course exceeded my expectations. The Spring Boot and microservices modules were incredibly detailed. Perfect for enterprise development!",
     image: user1,
     rating: 5,
   },
   {
     name: "Priya Singh",
     role: "Data Analyst at Accenture",
-    feedback: "Excellent Data Analytics course! The Python, SQL, and Tableau training with real industry projects helped me transition from non-tech to tech seamlessly.",
+    feedback:
+      "Excellent Data Analytics course! The Python, SQL, and Tableau training with real industry projects helped me transition from non-tech to tech seamlessly.",
     image: user2,
     rating: 5,
   },
   {
     name: "Vikash Kumar",
     role: "Software Engineer at Amazon",
-    feedback: "DSA course was game-changer for my coding interviews. Cracked Amazon, Google, and Microsoft interviews. The C++ and Java problem-solving approach is top-notch!",
+    feedback:
+      "DSA course was game-changer for my coding interviews. Cracked Amazon, Google, and Microsoft interviews. The C++ and Java problem-solving approach is top-notch!",
     image: user3,
     rating: 5,
   },
   {
     name: "Anita Desai",
     role: "Frontend Developer at Unacademy",
-    feedback: "The React.js course with Next.js was phenomenal! Real-time projects and modern development practices. Now building educational interfaces for millions of students!",
+    feedback:
+      "The React.js course with Next.js was phenomenal! Real-time projects and modern development practices. Now building educational interfaces for millions of students!",
     image: user1,
     rating: 5,
   },
   {
     name: "Karan Singh",
     role: "DevOps Engineer at Vedantu",
-    feedback: "Cloud computing and DevOps training was exceptional. Docker, Kubernetes, and AWS modules were industry-standard. Deployed scalable edtech solutions within 3 months!",
+    feedback:
+      "Cloud computing and DevOps training was exceptional. Docker, Kubernetes, and AWS modules were industry-standard. Deployed scalable edtech solutions within 3 months!",
     image: user2,
     rating: 5,
   },
   {
     name: "Meera Joshi",
     role: "Product Manager at WhiteHat Jr",
-    feedback: "The product management course combined with tech knowledge was perfect. Understanding both business and technology helped me excel in edtech product development!",
+    feedback:
+      "The product management course combined with tech knowledge was perfect. Understanding both business and technology helped me excel in edtech product development!",
     image: user3,
     rating: 5,
   },
   {
     name: "Rohit Agarwal",
     role: "Mobile App Developer at Toppr",
-    feedback: "React Native course was comprehensive! Built cross-platform educational apps with offline capabilities. The instructor support and peer learning were outstanding!",
+    feedback:
+      "React Native course was comprehensive! Built cross-platform educational apps with offline capabilities. The instructor support and peer learning were outstanding!",
     image: user1,
     rating: 5,
   },
   {
     name: "Kavya Reddy",
     role: "UX Designer at Coursera",
-    feedback: "UI/UX design course focused on educational interfaces was brilliant! Learned user research, prototyping, and accessibility. Now designing learning experiences globally!",
+    feedback:
+      "UI/UX design course focused on educational interfaces was brilliant! Learned user research, prototyping, and accessibility. Now designing learning experiences globally!",
     image: user2,
     rating: 5,
   },
   {
     name: "Amit Sharma",
     role: "Backend Developer at Simplilearn",
-    feedback: "Node.js and microservices architecture course was industry-focused. Built scalable learning management systems. The job placement support was incredible!",
+    feedback:
+      "Node.js and microservices architecture course was industry-focused. Built scalable learning management systems. The job placement support was incredible!",
     image: user3,
     rating: 5,
   },
@@ -104,14 +114,40 @@ const Testimonials = () => {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <section className="mt-16 py-12 bg-[#F97316]">
+      <div className="relative w-full">
+        {/* Background Image */}
+        <Image
+          src={testimonialTop}
+          alt="testimonial Background"
+          className="w-full h-[350px] sm:h-[400px] md:h-[600px] object-cover mt-14"
+          priority
+        />
+
+        {/* Overlay Content */}
+        <div className="absolute inset-0 flex flex-col sm:flex-row">
+          {/* Left Section (Icon)
+          <div className="flex-1 flex items-center justify-center bg-black/40 p-4">
+            <MdGroups2 className="text-[#F97316] text-5xl sm:text-6xl md:text-8xl" />
+          </div> */}
+
+          {/* Right Section (Text) */}
+          <div className="flex-1 flex items-center justify-center bg-black/40 p-4">
+            <h1 className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent ml-[650px] text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-center">
+              Impact
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <section className=" py-12 bg-[#F97316]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
               What Our Students Say
             </h2>
             <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
-              Hear directly from our students and partners about how our programs have transformed their careers and lives.
+              Hear directly from our students and partners about how our
+              programs have transformed their careers and lives.
             </p>
           </div>
 
@@ -119,7 +155,8 @@ const Testimonials = () => {
             {/* Testimonial 1 */}
             <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
               <p className="text-gray-700 italic mb-4 group-hover:text-white transition-colors duration-300 ">
-                &quot;The training gave me confidence and skills to secure my first job in tech. The mentors were incredibly supportive!&quot;
+                &quot;The training gave me confidence and skills to secure my
+                first job in tech. The mentors were incredibly supportive!&quot;
               </p>
               <div className="flex items-center">
                 <Image
@@ -130,8 +167,12 @@ const Testimonials = () => {
                   className="w-12 h-12 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300"
                 />
                 <div>
-                  <div className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-300">Amit Sharma</div>
-                  <div className="text-sm text-gray-500 group-hover:text-white transition-colors duration-300">Software Developer at Infosys</div>
+                  <div className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-300">
+                    Amit Sharma
+                  </div>
+                  <div className="text-sm text-gray-500 group-hover:text-white transition-colors duration-300">
+                    Software Developer at Infosys
+                  </div>
                 </div>
               </div>
             </div>
@@ -139,7 +180,9 @@ const Testimonials = () => {
             {/* Testimonial 2 */}
             <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
               <p className="text-gray-700 italic mb-4 group-hover:text-white transition-colors duration-300">
-                &quot;Thanks to the hands-on projects, I built a strong portfolio that impressed employers. I landed a job within weeks.&quot;
+                &quot;Thanks to the hands-on projects, I built a strong
+                portfolio that impressed employers. I landed a job within
+                weeks.&quot;
               </p>
               <div className="flex items-center">
                 <Image
@@ -151,8 +194,12 @@ const Testimonials = () => {
                   loading="lazy"
                 />
                 <div>
-                  <div className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-300">Priya Verma</div>
-                  <div className="text-sm text-gray-500 group-hover:text-white transition-colors duration-300">Data Analyst at TCS</div>
+                  <div className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-300">
+                    Priya Verma
+                  </div>
+                  <div className="text-sm text-gray-500 group-hover:text-white transition-colors duration-300">
+                    Data Analyst at TCS
+                  </div>
                 </div>
               </div>
             </div>
@@ -160,7 +207,8 @@ const Testimonials = () => {
             {/* Testimonial 3 */}
             <div className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
               <p className="text-gray-700 italic mb-4 group-hover:text-white transition-colors duration-300">
-                &quot;We have hired multiple graduates from this program. They are job-ready, skilled, and bring fresh ideas to our team.&quot;
+                &quot;We have hired multiple graduates from this program. They
+                are job-ready, skilled, and bring fresh ideas to our team.&quot;
               </p>
               <div className="flex items-center">
                 <Image
@@ -171,8 +219,12 @@ const Testimonials = () => {
                   className="w-12 h-12 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300"
                 />
                 <div>
-                  <div className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-300">Rohit Mehta</div>
-                  <div className="text-sm text-gray-500 group-hover:text-white transition-colors duration-300">HR Manager, TechCorp</div>
+                  <div className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-300">
+                    Rohit Mehta
+                  </div>
+                  <div className="text-sm text-gray-500 group-hover:text-white transition-colors duration-300">
+                    HR Manager, TechCorp
+                  </div>
                 </div>
               </div>
             </div>
@@ -180,14 +232,21 @@ const Testimonials = () => {
         </div>
       </section>
 
-
-      <section id="testimonials" className="py-12 bg-gray-100 overflow-hidden pt-18">
+      <section
+        id="testimonials"
+        className="py-12 bg-gray-100 overflow-hidden pt-18"
+      >
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">Our Students </h2>
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">
+            Our Students{" "}
+          </h2>
           {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {testimonials.slice(0, 6).map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 hover:-translate-y-3 transition-all duration-300 cursor-pointer group border border-transparent hover:border-orange-200">
+              <div
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 hover:-translate-y-3 transition-all duration-300 cursor-pointer group border border-transparent hover:border-orange-200"
+              >
                 <div className="flex items-center mb-4">
                   <Image
                     src={item.image}
@@ -198,11 +257,17 @@ const Testimonials = () => {
                     loading="lazy"
                   />
                   <div className="text-left">
-                    <h4 className="text-lg font-semibold text-gray-800 group-hover:text-orange-600 transition-colors duration-300">{item.name}</h4>
-                    <p className="text-sm text-orange-500 font-medium group-hover:text-orange-600 transition-colors duration-300">{item.role}</p>
+                    <h4 className="text-lg font-semibold text-gray-800 group-hover:text-orange-600 transition-colors duration-300">
+                      {item.name}
+                    </h4>
+                    <p className="text-sm text-orange-500 font-medium group-hover:text-orange-600 transition-colors duration-300">
+                      {item.role}
+                    </p>
                     <div className="flex text-yellow-400 text-sm mt-1 group-hover:scale-110 transition-transform duration-300">
                       {[...Array(item.rating)].map((_, i) => (
-                        <span key={i} className="group-hover:animate-pulse">⭐</span>
+                        <span key={i} className="group-hover:animate-pulse">
+                          ⭐
+                        </span>
                       ))}
                     </div>
                   </div>
