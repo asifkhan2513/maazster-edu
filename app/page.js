@@ -23,7 +23,6 @@ export default function Home() {
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-orange-50 pt-16 md:pt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-20">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-20">
-
             {/* Left Content - Mobile First */}
             <div className="w-full lg:w-1/2 text-center lg:text-left space-y-4 md:space-y-6 order-2 lg:order-1">
               <p className="text-orange-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold tracking-wide uppercase">
@@ -41,23 +40,45 @@ export default function Home() {
               </div>
 
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-4 lg:px-0">
-                Transform your career with cutting-edge technology education. Master MERN Stack, AI, and modern web development with industry experts.
+                Transform your career with cutting-edge technology education.
+                Master MERN Stack, AI, and modern web development with industry
+                experts.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start pt-4 md:pt-6 px-4 lg:px-0">
                 <button className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm md:text-base lg:text-lg font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg">
                   <span className="flex items-center justify-center gap-2">
                     <Link href={PATH.COURSES}> Start Learning Now</Link>
-                    <svg className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <svg
+                      className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
                     </svg>
                   </span>
                 </button>
 
                 <button className="group border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white text-sm md:text-base lg:text-lg font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl transition-all duration-300 transform hover:scale-105">
                   <span className="flex items-center justify-center gap-2">
-                    <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <svg
+                      className="w-4 h-4 md:w-5 md:h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
                     </svg>
                     <Link href={PATH.PROJECTS}> Watch Demo</Link>
                   </span>
@@ -70,8 +91,14 @@ export default function Home() {
               <div className="relative">
                 {/* Floating Elements - Hidden on mobile for cleaner look */}
                 <div className="hidden md:block absolute -top-10 -left-10 w-16 h-16 lg:w-20 lg:h-20 bg-orange-200 rounded-full opacity-60 animate-pulse"></div>
-                <div className="hidden md:block absolute -bottom-10 -right-10 w-12 h-12 lg:w-16 lg:h-16 bg-blue-200 rounded-full opacity-60 animate-pulse" style={{ animationDelay: '1s' }}></div>
-                <div className="hidden lg:block absolute top-1/2 -right-20 w-12 h-12 bg-green-200 rounded-full opacity-60 animate-pulse" style={{ animationDelay: '2s' }}></div>
+                <div
+                  className="hidden md:block absolute -bottom-10 -right-10 w-12 h-12 lg:w-16 lg:h-16 bg-blue-200 rounded-full opacity-60 animate-pulse"
+                  style={{ animationDelay: "1s" }}
+                ></div>
+                <div
+                  className="hidden lg:block absolute top-1/2 -right-20 w-12 h-12 bg-green-200 rounded-full opacity-60 animate-pulse"
+                  style={{ animationDelay: "2s" }}
+                ></div>
 
                 <div className="relative z-10 transform hover:scale-105 transition-transform duration-500">
                   <Image
@@ -95,7 +122,6 @@ export default function Home() {
       {/* Features Section with Stylish Header */}
       <section className="py-16 md:py-20 lg:py-32 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-
           {/* Stylish Section Header */}
           <div className="text-center mb-12 md:mb-16 lg:mb-24">
             <div className="inline-block">
@@ -104,14 +130,17 @@ export default function Home() {
                   Empowering Your
                 </span>
                 <br />
-                <span className="text-gray-900 drop-shadow-lg">Learning Journey</span>
+                <span className="text-gray-900 drop-shadow-lg">
+                  Learning Journey
+                </span>
 
                 {/* Decorative underline */}
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 md:w-32 lg:w-40 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full shadow-lg"></div>
               </h2>
             </div>
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed mt-6 md:mt-8">
-              Explore the different ways we can help you learn and grow in tech with our comprehensive programs
+              Explore the different ways we can help you learn and grow in tech
+              with our comprehensive programs
             </p>
           </div>
 
@@ -121,14 +150,21 @@ export default function Home() {
             <div className="group bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl p-6 md:p-8 lg:p-10 transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-orange-500 hover:to-orange-600 hover:text-white border border-gray-100">
               <div className="flex justify-center mb-4 md:mb-6">
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-blue-100 group-hover:bg-white group-hover:bg-opacity-20 rounded-2xl flex items-center justify-center transition-all duration-300">
-                  <svg className="w-8 h-8 md:w-10 md:h-10 text-blue-500 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-8 h-8 md:w-10 md:h-10 text-blue-500 group-hover:text-white transition-colors"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
                   </svg>
                 </div>
               </div>
-              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-center">Online Live Classes</h3>
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-center">
+                Online Live Classes
+              </h3>
               <p className="text-center text-sm md:text-base leading-relaxed opacity-90">
-                Interactive online sessions with real-time Q&A and project-based learning, accessible from anywhere in the world.
+                Interactive online sessions with real-time Q&A and project-based
+                learning, accessible from anywhere in the world.
               </p>
             </div>
 
@@ -139,9 +175,12 @@ export default function Home() {
                   <FaUserGroup className="text-2xl md:text-3xl text-green-500 group-hover:text-white transition-colors" />
                 </div>
               </div>
-              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-center">In-Person Workshops</h3>
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-center">
+                In-Person Workshops
+              </h3>
               <p className="text-center text-sm md:text-base leading-relaxed opacity-90">
-                Hands-on workshops designed to provide practical experience and collaborative learning in a classroom setting.
+                Hands-on workshops designed to provide practical experience and
+                collaborative learning in a classroom setting.
               </p>
             </div>
 
@@ -149,14 +188,25 @@ export default function Home() {
             <div className="group bg-white rounded-2xl md:rounded-3xl shadow-xl hover:shadow-2xl p-6 md:p-8 lg:p-10 transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-orange-500 hover:to-orange-600 hover:text-white border border-gray-100">
               <div className="flex justify-center mb-4 md:mb-6">
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-purple-100 group-hover:bg-white group-hover:bg-opacity-20 rounded-2xl flex items-center justify-center transition-all duration-300">
-                  <svg className="w-8 h-8 md:w-10 md:h-10 text-purple-500 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                  <svg
+                    className="w-8 h-8 md:w-10 md:h-10 text-purple-500 group-hover:text-white transition-colors"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </div>
               </div>
-              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-center">1-on-1 Mentorship</h3>
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-center">
+                1-on-1 Mentorship
+              </h3>
               <p className="text-center text-sm md:text-base leading-relaxed opacity-90">
-                Personalized guidance and support tailored to your learning goals, with direct feedback and career advice.
+                Personalized guidance and support tailored to your learning
+                goals, with direct feedback and career advice.
               </p>
             </div>
 
@@ -167,9 +217,12 @@ export default function Home() {
                   <ChevronsLeftRightEllipsis className="text-2xl md:text-3xl text-yellow-500 group-hover:text-white transition-colors" />
                 </div>
               </div>
-              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-center">Custom Course Creation</h3>
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-center">
+                Custom Course Creation
+              </h3>
               <p className="text-center text-sm md:text-base leading-relaxed opacity-90">
-                Development of custom courses and learning paths to suit your unique needs and interests in technology.
+                Development of custom courses and learning paths to suit your
+                unique needs and interests in technology.
               </p>
             </div>
           </div>
@@ -212,14 +265,18 @@ export default function Home() {
                 </h2>
               </div>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mt-6 md:mt-8">
-                Ready to start your journey in tech? Contact us today and let's discuss how we can help you achieve your learning goals with our comprehensive MERN Full Stack and AI programs.
+                Ready to start your journey in tech? Contact us today and
+                let&apos;s discuss how we can help you achieve your learning
+                goals with our comprehensive MERN Full Stack and AI programs.
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 max-w-7xl mx-auto">
               {/* Contact Form */}
               <div className="bg-white rounded-2xl md:rounded-3xl shadow-2xl p-6 md:p-8 lg:p-12 border border-gray-100">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">Send us a Message</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">
+                  Send us a Message
+                </h3>
 
                 <form className="space-y-4 md:space-y-6">
                   <div className="grid md:grid-cols-2 gap-4 md:gap-6">
@@ -280,8 +337,12 @@ export default function Home() {
                       <option value="mern">MERN Full Stack with AI</option>
                       <option value="ai-ml">AI & Machine Learning</option>
                       <option value="java">Java Full Stack with AI</option>
-                      <option value="data-analytics">Data Analytics with AI</option>
-                      <option value="digital-marketing">Digital Marketing</option>
+                      <option value="data-analytics">
+                        Data Analytics with AI
+                      </option>
+                      <option value="digital-marketing">
+                        Digital Marketing
+                      </option>
                       <option value="dsa">Data Structures & Algorithms</option>
                     </select>
                   </div>
@@ -310,20 +371,40 @@ export default function Home() {
               <div className="space-y-6 md:space-y-8">
                 {/* Contact Information */}
                 <div className="bg-white rounded-2xl md:rounded-3xl shadow-2xl p-6 md:p-8 border border-gray-100">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">Contact Information</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">
+                    Contact Information
+                  </h3>
 
                   <div className="space-y-4 md:space-y-6">
                     <div className="flex items-start space-x-3 md:space-x-4">
                       <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 md:w-6 md:h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <svg
+                          className="w-5 h-5 md:w-6 md:h-6 text-orange-500"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">Address</h4>
+                        <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">
+                          Address
+                        </h4>
                         <p className="text-gray-600 text-sm md:text-base">
-                          D- 1099, Sector 5, D Block, Indira Nagar,<br />
+                          D- 1099, Sector 5, D Block, Indira Nagar,
+                          <br />
                           Lucknow, Uttar Pradesh 226016
                         </p>
                       </div>
@@ -331,39 +412,85 @@ export default function Home() {
 
                     <div className="flex items-start space-x-3 md:space-x-4">
                       <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 md:w-6 md:h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        <svg
+                          className="w-5 h-5 md:w-6 md:h-6 text-orange-500"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                          />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">Phone</h4>
-                        <p className="text-gray-600 text-sm md:text-base">+919214588441</p>
+                        <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">
+                          Phone
+                        </h4>
+                        <p className="text-gray-600 text-sm md:text-base">
+                          +919214588441
+                        </p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-3 md:space-x-4">
                       <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 md:w-6 md:h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        <svg
+                          className="w-5 h-5 md:w-6 md:h-6 text-orange-500"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                          />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">Email</h4>
-                        <p className="text-gray-600 text-sm md:text-base">info@maazsteredu.com</p>
+                        <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">
+                          Email
+                        </h4>
+                        <p className="text-gray-600 text-sm md:text-base">
+                          info@maazsteredu.com
+                        </p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-3 md:space-x-4">
                       <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 md:w-6 md:h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <svg
+                          className="w-5 h-5 md:w-6 md:h-6 text-orange-500"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">Office Hours</h4>
-                        <p className="text-gray-600 text-sm md:text-base">Monday - Friday: 9:00 AM - 7:00 PM</p>
-                        <p className="text-gray-600 text-sm md:text-base">Saturday: 10:00 AM - 5:00 PM</p>
-                        <p className="text-gray-600 text-sm md:text-base">Sunday: Closed</p>
+                        <h4 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">
+                          Office Hours
+                        </h4>
+                        <p className="text-gray-600 text-sm md:text-base">
+                          Monday - Friday: 9:00 AM - 7:00 PM
+                        </p>
+                        <p className="text-gray-600 text-sm md:text-base">
+                          Saturday: 10:00 AM - 5:00 PM
+                        </p>
+                        <p className="text-gray-600 text-sm md:text-base">
+                          Sunday: Closed
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -372,7 +499,9 @@ export default function Home() {
                 {/* Google Map */}
                 <div className="bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
                   <div className="p-4 md:p-6 pb-0">
-                    <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">Find Us Here</h3>
+                    <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">
+                      Find Us Here
+                    </h3>
                   </div>
                   <div className="h-60 md:h-80">
                     <iframe
@@ -399,20 +528,36 @@ export default function Home() {
                   </span>
                 </h3>
                 <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-8 md:mb-12 max-w-4xl mx-auto">
-                  At Maazster Edu, we're committed to transforming careers through cutting-edge technology education. Our comprehensive MERN Full Stack with AI program combines hands-on learning with industry-relevant projects, ensuring you're job-ready from day one.
+                  At Maazster Edu, we&apos;re committed to transforming careers
+                  through cutting-edge technology education. Our comprehensive
+                  MERN Full Stack with AI program combines hands-on learning
+                  with industry-relevant projects, ensuring you&apos;re
+                  job-ready from day one.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
                   <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100">
-                    <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-orange-500 mb-2 md:mb-3">500+</div>
-                    <div className="text-base md:text-lg font-semibold text-gray-700">Students Placed</div>
+                    <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-orange-500 mb-2 md:mb-3">
+                      500+
+                    </div>
+                    <div className="text-base md:text-lg font-semibold text-gray-700">
+                      Students Placed
+                    </div>
                   </div>
                   <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100">
-                    <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-500 mb-2 md:mb-3">95%</div>
-                    <div className="text-base md:text-lg font-semibold text-gray-700">Success Rate</div>
+                    <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-500 mb-2 md:mb-3">
+                      95%
+                    </div>
+                    <div className="text-base md:text-lg font-semibold text-gray-700">
+                      Success Rate
+                    </div>
                   </div>
                   <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-gradient-to-br from-green-50 to-green-100">
-                    <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-500 mb-2 md:mb-3">50+</div>
-                    <div className="text-base md:text-lg font-semibold text-gray-700">Industry Partners</div>
+                    <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-500 mb-2 md:mb-3">
+                      50+
+                    </div>
+                    <div className="text-base md:text-lg font-semibold text-gray-700">
+                      Industry Partners
+                    </div>
                   </div>
                 </div>
               </div>
