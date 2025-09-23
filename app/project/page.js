@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Navbar from "@/app/navbar/page";
-import CountUp from "react-countup"
+import CountUp from "react-countup";
 import {
   FaReact,
   FaDatabase,
@@ -165,7 +165,7 @@ const Project = () => {
   // Get project count for each category
   const getCategoryCount = (category) => {
     if (category === "All") return projects.length;
-    return projects.filter(project => project.category === category).length;
+    return projects.filter((project) => project.category === category).length;
   };
 
   const handlePreview = (project) => {
@@ -179,9 +179,9 @@ const Project = () => {
   };
 
   const toggleDescription = (index) => {
-    setExpandedProjects(prev => ({
+    setExpandedProjects((prev) => ({
       ...prev,
-      [index]: !prev[index]
+      [index]: !prev[index],
     }));
   };
 
@@ -202,40 +202,60 @@ const Project = () => {
               Our Impact
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              See the real results of our educational programs and the success stories of our students
+              See the real results of our educational programs and the success
+              stories of our students
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
             <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300"><CountUp
-                end={500} duration={3} />+</div>
-              <div className="text-gray-700 font-semibold group-hover:text-blue-700 transition-colors duration-300">Students Trained</div>
-              <div className="text-sm text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">Across all programs</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">
+                <CountUp end={500} duration={3} />+
+              </div>
+              <div className="text-gray-700 font-semibold group-hover:text-blue-700 transition-colors duration-300">
+                Students Trained
+              </div>
+              <div className="text-sm text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">
+                Across all programs
+              </div>
             </div>
 
             <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
-              <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform duration-300 "><CountUp
-                end={95} duration={3} />%</div>
-              <div className="text-gray-700 font-semibold group-hover:text-green-700 transition-colors duration-300">Placement Rate</div>
-              <div className="text-sm text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">Within 6 months</div>
+              <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform duration-300 ">
+                <CountUp end={95} duration={3} />%
+              </div>
+              <div className="text-gray-700 font-semibold group-hover:text-green-700 transition-colors duration-300">
+                Placement Rate
+              </div>
+              <div className="text-sm text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">
+                Within 6 months
+              </div>
             </div>
 
             <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300"><CountUp
-                end={150} duration={3} />+</div>
-              <div className="text-gray-700 font-semibold group-hover:text-blue-700 transition-colors duration-300">Projects Completed</div>
-              <div className="text-sm text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">Real-world applications</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">
+                <CountUp end={150} duration={3} />+
+              </div>
+              <div className="text-gray-700 font-semibold group-hover:text-blue-700 transition-colors duration-300">
+                Projects Completed
+              </div>
+              <div className="text-sm text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">
+                Real-world applications
+              </div>
             </div>
 
             <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl group">
-              <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300"><CountUp
-                end={50} duration={3} />+</div>
-              <div className="text-gray-700 font-semibold group-hover:text-purple-700 transition-colors duration-300">Partner Companies</div>
-              <div className="text-sm text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">Hiring our graduates</div>
+              <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300">
+                <CountUp end={50} duration={3} />+
+              </div>
+              <div className="text-gray-700 font-semibold group-hover:text-purple-700 transition-colors duration-300">
+                Partner Companies
+              </div>
+              <div className="text-sm text-gray-500 mt-1 group-hover:text-gray-600 transition-colors duration-300">
+                Hiring our graduates
+              </div>
             </div>
           </div>
-
         </div>
       </section>
       <div className=" pt-18 pb-16">
@@ -258,7 +278,6 @@ const Project = () => {
               Responsive: on small screens it stacks (left on top)
           */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
             <aside className="col-span-1">
               {/* Vertical filter buttons (left) */}
               <div className="bg-white rounded-2xl shadow p-4 sticky top-28">
@@ -273,24 +292,28 @@ const Project = () => {
                       <button
                         key={category}
                         onClick={() => setSelectedCategory(category)}
-                        className={`group w-full text-left px-3 py-2 rounded-lg font-medium transition-all duration-200 text-sm relative overflow-hidden ${selectedCategory === category
-                          ? "bg-orange-500 text-white shadow-lg"
-                          : "bg-white text-gray-700 hover:bg-orange-50 border border-gray-100 hover:border-orange-200"
-                          }`}
+                        className={`group w-full text-left px-3 py-2 rounded-lg font-medium transition-all duration-200 text-sm relative overflow-hidden ${
+                          selectedCategory === category
+                            ? "bg-orange-500 text-white shadow-lg"
+                            : "bg-white text-gray-700 hover:bg-orange-50 border border-gray-100 hover:border-orange-200"
+                        }`}
                       >
                         <div className="flex justify-between items-center">
                           <span>{category}</span>
-                          <span className={`text-xs px-2 py-1 rounded-full transition-all duration-200 ${selectedCategory === category
-                            ? "bg-white bg-opacity-20 text-white"
-                            : "bg-gray-100 text-gray-600 group-hover:bg-orange-100 group-hover:text-orange-600"
-                            }`}>
+                          <span
+                            className={`text-xs px-2 py-1 rounded-full transition-all duration-200 ${
+                              selectedCategory === category
+                                ? "bg-white bg-opacity-20 text-white"
+                                : "bg-gray-100 text-gray-600 group-hover:bg-orange-100 group-hover:text-orange-600"
+                            }`}
+                          >
                             {count}
                           </span>
                         </div>
 
                         {/* Hover tooltip */}
                         <div className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
-                          {count} project{count !== 1 ? 's' : ''} available
+                          {count} project{count !== 1 ? "s" : ""} available
                         </div>
                       </button>
                     );
@@ -308,10 +331,11 @@ const Project = () => {
                     <button
                       key={`mobile-${category}`}
                       onClick={() => setSelectedCategory(category)}
-                      className={`px-3 py-2 rounded-full text-sm font-medium ${selectedCategory === category
-                        ? "bg-orange-500 text-white"
-                        : "bg-white text-gray-700 border border-gray-200"
-                        }`}
+                      className={`px-3 py-2 rounded-full text-sm font-medium ${
+                        selectedCategory === category
+                          ? "bg-orange-500 text-white"
+                          : "bg-white text-gray-700 border border-gray-200"
+                      }`}
                     >
                       {category}
                     </button>
@@ -332,7 +356,9 @@ const Project = () => {
                     >
                       {/* Project Image/Icon - Smaller */}
                       <div className="h-32 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center group-hover:from-orange-100 group-hover:to-pink-100 transition-all duration-300">
-                        <div className="text-4xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">{project.icon}</div>
+                        <div className="text-4xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                          {project.icon}
+                        </div>
                       </div>
 
                       {/* Project Content - Compact */}
@@ -359,8 +385,7 @@ const Project = () => {
                           <p>
                             {shouldTruncate && !isExpanded
                               ? truncateText(project.description)
-                              : project.description
-                            }
+                              : project.description}
                           </p>
                           {shouldTruncate && (
                             <button
@@ -373,7 +398,8 @@ const Project = () => {
                                 </>
                               ) : (
                                 <>
-                                  Read More <FaChevronDown className="text-xs" />
+                                  Read More{" "}
+                                  <FaChevronDown className="text-xs" />
                                 </>
                               )}
                             </button>
@@ -383,14 +409,16 @@ const Project = () => {
                         {/* Technologies - Compact */}
                         <div className="mb-3">
                           <div className="flex flex-wrap gap-1">
-                            {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                              <span
-                                key={techIndex}
-                                className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs group-hover:bg-orange-50 group-hover:text-orange-700 transition-all duration-300"
-                              >
-                                {tech}
-                              </span>
-                            ))}
+                            {project.technologies
+                              .slice(0, 3)
+                              .map((tech, techIndex) => (
+                                <span
+                                  key={techIndex}
+                                  className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs group-hover:bg-orange-50 group-hover:text-orange-700 transition-all duration-300"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
                             {project.technologies.length > 3 && (
                               <span className="px-2 py-1 bg-gray-200 text-gray-600 rounded text-xs">
                                 +{project.technologies.length - 3}
@@ -406,7 +434,9 @@ const Project = () => {
                               <p className="font-semibold text-gray-800 group-hover:text-orange-600 transition-colors duration-300 truncate">
                                 {project.student}
                               </p>
-                              <p className="text-gray-500 group-hover:text-gray-600 transition-colors duration-300 truncate">{project.course}</p>
+                              <p className="text-gray-500 group-hover:text-gray-600 transition-colors duration-300 truncate">
+                                {project.course}
+                              </p>
                             </div>
                             <button
                               onClick={() => handlePreview(project)}
@@ -462,7 +492,9 @@ const Project = () => {
           <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-800">{selectedProject.title}</h2>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  {selectedProject.title}
+                </h2>
                 <button
                   onClick={closePreview}
                   className="text-gray-500 hover:text-gray-700 text-2xl"
@@ -475,9 +507,9 @@ const Project = () => {
                 <iframe
                   width="100%"
                   height="100%"
-                  src={selectedProject.youtube.replace('watch?v=', 'embed/')}
+                  src={selectedProject.youtube.replace("watch?v=", "embed/")}
                   title={selectedProject.title}
-                  style={{ border: 'none' }}
+                  style={{ border: "none" }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="rounded-lg"
@@ -486,14 +518,21 @@ const Project = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Project Details</h3>
-                  <p className="text-gray-600 mb-4">{selectedProject.description}</p>
+                  <h3 className="text-lg font-semibold mb-3">
+                    Project Details
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {selectedProject.description}
+                  </p>
 
                   <div className="mb-4">
                     <h4 className="font-semibold mb-2">Technologies Used:</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.technologies.map((tech, index) => (
-                        <span key={index} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+                        <span
+                          key={index}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                        >
                           {tech}
                         </span>
                       ))}
@@ -502,11 +541,17 @@ const Project = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Student Information</h3>
+                  <h3 className="text-lg font-semibold mb-3">
+                    Student Information
+                  </h3>
                   <div className="bg-gray-50 p-4 rounded-lg">
-                    <p className="font-semibold text-gray-800">{selectedProject.student}</p>
+                    <p className="font-semibold text-gray-800">
+                      {selectedProject.student}
+                    </p>
                     <p className="text-gray-600">{selectedProject.course}</p>
-                    <p className="text-sm text-orange-500 mt-2">{selectedProject.category}</p>
+                    <p className="text-sm text-orange-500 mt-2">
+                      {selectedProject.category}
+                    </p>
                   </div>
 
                   <div className="mt-4 flex gap-3">
@@ -534,4 +579,3 @@ const Project = () => {
 };
 
 export default Project;
-
