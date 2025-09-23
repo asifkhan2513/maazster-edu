@@ -137,27 +137,37 @@ const Courses = () => {
 
       <div className="relative w-full">
         {/* Background Image */}
-        <Image
+        {/* <Image
           src={CourseTop}
           alt="Course Background"
           className="w-full h-[350px] sm:h-[400px] md:h-[600px] object-cover mt-16"
           priority
-        />
+        /> */}
+        <div className="relative w-full mt-16 ">
+  <Image
+    src={CourseTop}
+    alt="Course Background"
+    className="w-full h-auto object-contain "
+    priority
+  />
+</div>
+
 
         {/* Overlay Content */}
-        <div className="absolute inset-0 flex flex-col sm:flex-row">
-          {/* Left Section (Icon) */}
-          {/* <div className="flex-1 flex items-center justify-center bg-black/40 p-4">
-            <IoMdTrendingUp className="text-[#F97316] text-5xl sm:text-7xl md:text-9xl" />
-          </div> */}
+       <div className="absolute inset-0 flex flex-col sm:flex-row">
+  {/* Right Section (Text) */}
+  <div className="flex-1 flex items-center justify-start bg-black/40 p-0  sm:[h-96]">
+    <h1 className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 
+                   bg-clip-text text-transparent mt-12 
+                   text-4xl sm:text-6xl md:text-7xl lg:text-8xl 
+                   font-bold text-left max-w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl px-24">
+      Learning
+    </h1>
+  </div>
+</div>
 
-          {/* Right Section (Text) */}
-          <div className="flex-1 flex items-center justify-center bg-black/40 p-4">
-            <h1 className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent  mr-[720px] mt-[50px] text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-center">
-              Learning
-            </h1>
-          </div>
-        </div>
+
+        
       </div>
       <section className="py-12 bg-[#F97316]">
         <div className="max-w-7xl mx-auto px-4">

@@ -58,14 +58,15 @@ const Plans = () => {
       <Navbar />
 
       <div className="relative w-full">
+         <div className="relative w-full mt-16 ">
         {/* Background Image */}
         <Image
           src={planTop}
           alt="Plans Background"
-          className="w-full h-[350px] sm:h-[400px] md:h-[600px] object-cover mt-14"
+         className="w-full h-auto object-contain "
           priority
-        />
-
+        /></div>
+    
         {/* Overlay Content */}
         <div className="absolute inset-0 flex flex-col sm:flex-row">
           {/* Left Section (Icon) */}
@@ -74,8 +75,8 @@ const Plans = () => {
           </div> */}
 
           {/* Right Section (Text) */}
-          <div className="flex-1 flex items-center justify-center bg-black/40 p-4">
-            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-center bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent">
+          <div className="flex-1 flex items-center px-24  justify-end  bg-black/40 p-4">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent">
               Growth
             </h1>
           </div>

@@ -115,17 +115,19 @@ const Testimonials = () => {
       <Navbar />
 
       <div className="relative w-full">
+        <div className="relative w-full mt-16 ">
         {/* Background Image */}
         <Image
           src={testimonialTop}
           alt="testimonial Background"
-          className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover mt-14"
+           className="w-full h-auto object-contain "
           priority
         />
+        </div>
 
         {/* Overlay Content */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-          <h1 className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-center px-4">
+        <div className="absolute inset-0 flex items-center px-24  justify-end  bg-black/40">
+          <h1 className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent text-4xl  sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl font-bold text-center px-4">
             Impact
           </h1>
         </div>
