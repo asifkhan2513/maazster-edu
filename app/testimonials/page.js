@@ -116,13 +116,13 @@ const Testimonials = () => {
 
       <div className="relative w-full">
         <div className="relative w-full mt-16 ">
-        {/* Background Image */}
-        <Image
-          src={testimonialTop}
-          alt="testimonial Background"
-           className="w-full h-auto object-contain "
-          priority
-        />
+          {/* Background Image */}
+          <Image
+            src={testimonialTop}
+            alt="testimonial Background"
+            className="w-full h-auto object-contain "
+            priority
+          />
         </div>
 
         {/* Overlay Content */}
@@ -136,7 +136,7 @@ const Testimonials = () => {
       <section className=" py-12 bg-[#F97316]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               What Our Students Say
             </h2>
             <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
