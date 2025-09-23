@@ -200,14 +200,14 @@ const Project = () => {
       <Navbar />
 
       <div className="relative w-full">
-           <div className="relative w-full mt-16 ">
-        {/* Background Image */}
-        <Image
-          src={projectTop}
-          alt="Projects Background"
-           className="w-full h-auto object-contain "
-          priority
-        />
+        <div className="relative w-full mt-16 ">
+          {/* Background Image */}
+          <Image
+            src={projectTop}
+            alt="Projects Background"
+            className="w-full h-auto object-contain "
+            priority
+          />
         </div>
 
         {/* Overlay Content */}
@@ -218,7 +218,7 @@ const Project = () => {
           </div> */}
 
           {/* Right Section (Text) */}
-        <div className="flex-1 flex items-center px-24  justify-start  bg-black/40 p-4">
+          <div className="flex-1 flex items-center px-24  justify-start  bg-black/40 p-4">
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent">
               Growth
             </h1>
@@ -229,7 +229,7 @@ const Project = () => {
       <section className=" py-12  bg-[#F97D26]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 ">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 ">
               Our Impact
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -306,7 +306,9 @@ const Project = () => {
               </h1>
             </div>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mt-6 md:mt-8 px-4">
-              Discover the incredible projects built by our students. From AI applications to full-stack web platforms, see how our graduates are making their mark in the tech industry.
+              Discover the incredible projects built by our students. From AI
+              applications to full-stack web platforms, see how our graduates
+              are making their mark in the tech industry.
             </p>
           </div>
 
@@ -330,18 +332,20 @@ const Project = () => {
                       <button
                         key={category}
                         onClick={() => setSelectedCategory(category)}
-                        className={`group w-full text-left px-3 py-2 rounded-lg font-medium transition-all duration-200 text-sm relative overflow-hidden ${selectedCategory === category
-                          ? "bg-orange-500 text-white shadow-lg"
-                          : "bg-white text-gray-700 hover:bg-orange-50 border border-gray-100 hover:border-orange-200"
-                          }`}
+                        className={`group w-full text-left px-3 py-2 rounded-lg font-medium transition-all duration-200 text-sm relative overflow-hidden ${
+                          selectedCategory === category
+                            ? "bg-orange-500 text-white shadow-lg"
+                            : "bg-white text-gray-700 hover:bg-orange-50 border border-gray-100 hover:border-orange-200"
+                        }`}
                       >
                         <div className="flex justify-between items-center">
                           <span>{category}</span>
                           <span
-                            className={`text-xs px-2 py-1 rounded-full transition-all duration-200 ${selectedCategory === category
-                              ? "bg-white bg-opacity-20 text-white"
-                              : "bg-gray-100 text-gray-600 group-hover:bg-orange-100 group-hover:text-orange-600"
-                              }`}
+                            className={`text-xs px-2 py-1 rounded-full transition-all duration-200 ${
+                              selectedCategory === category
+                                ? "bg-white bg-opacity-20 text-white"
+                                : "bg-gray-100 text-gray-600 group-hover:bg-orange-100 group-hover:text-orange-600"
+                            }`}
                           >
                             {count}
                           </span>
@@ -367,10 +371,11 @@ const Project = () => {
                     <button
                       key={`mobile-${category}`}
                       onClick={() => setSelectedCategory(category)}
-                      className={`px-3 py-2 rounded-full text-sm font-medium ${selectedCategory === category
-                        ? "bg-orange-500 text-white"
-                        : "bg-white text-gray-700 border border-gray-200"
-                        }`}
+                      className={`px-3 py-2 rounded-full text-sm font-medium ${
+                        selectedCategory === category
+                          ? "bg-orange-500 text-white"
+                          : "bg-white text-gray-700 border border-gray-200"
+                      }`}
                     >
                       {category}
                     </button>
