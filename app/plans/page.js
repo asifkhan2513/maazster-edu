@@ -75,7 +75,7 @@ const Plans = () => {
           </div> */}
 
           {/* Right Section (Text) */}
-          <div className="flex-1 flex items-center px-24  justify-end  bg-black/40 p-4">
+          <div className="flex-1 flex items-center px-24  justify-end  bg-black/10 p-4">
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent">
               Growth
             </h1>
