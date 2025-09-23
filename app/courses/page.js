@@ -156,17 +156,16 @@ const Courses = () => {
         <div className="absolute inset-0 flex flex-col sm:flex-row">
           {/* Right Section (Text) */}
           <div className="flex-1 flex items-center justify-start bg-black/10 p-0  sm:[h-96]">
-            <h1 className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 
+            <h1
+              className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 
                    bg-clip-text text-transparent mt-12 
                    text-4xl sm:text-6xl md:text-7xl lg:text-8xl 
-                   font-bold text-left max-w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl px-24">
+                   font-bold text-left max-w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl px-24"
+            >
               Learning
             </h1>
           </div>
         </div>
-
-
-
       </div>
       <section className="py-12 bg-[#F97316]">
         <div className="max-w-7xl mx-auto px-4">
