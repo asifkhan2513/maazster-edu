@@ -81,13 +81,13 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
-            <a
+            <Link
               href="tel:+919214588441"
               onClick={() => setIsOpen(false)}
               className="text-sm font-medium text-orange-500 hover:text-orange-600"
             >
               📞 Call: +91 9214588441
-            </a>
+            </Link>
             {/* FIXED: Also corrected the mobile contact button to be a Link */}
             <Link
               href={PATH.CONTACT_US}
