@@ -1,6 +1,8 @@
 import Banner from "@/app/common/baaner1.png";
 import leftImage from "@/app/common/cta-left-image.png";
 import Image from "next/image";
+import Link from "next/link";
+import { PATH } from "../common/constant";
 
 const BannerSection = () => {
   return (
@@ -37,7 +39,7 @@ const BannerSection = () => {
             </p>
             <button className="bg-white hover:bg-gray-100 rounded-lg px-6 py-3 transition-all duration-300 transform hover:scale-105">
               <span className="text-orange-500 font-semibold">
-                View Courses
+               <Link href={PATH.COURSES}> View Courses</Link>
               </span>
             </button>
           </div>

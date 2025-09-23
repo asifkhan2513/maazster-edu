@@ -12,6 +12,8 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+    const today = new Date;
+    const currentYear = today.getFullYear();
     return (
         <footer className="bg-gray-900 text-white py-12 ">
             <div className="max-w-7xl mx-auto px-4">
@@ -24,11 +26,28 @@ const Footer = () => {
                             Join thousands of students who have transformed their careers with us.
                         </p>
                         <div className="flex space-x-4">
-                            <FaFacebook className="text-blue-500 hover:text-blue-400 cursor-pointer text-xl" />
-                            <FaTwitter className="text-blue-400 hover:text-blue-300 cursor-pointer text-xl" />
-                            <FaLinkedin className="text-blue-600 hover:text-blue-500 cursor-pointer text-xl" />
-                            <FaInstagram className="text-pink-500 hover:text-pink-400 cursor-pointer text-xl" />
-                            <FaYoutube className="text-red-500 hover:text-red-400 cursor-pointer text-xl" />
+
+                            <Link href={PATH.FACEBOOK}>
+                                <FaFacebook className="text-blue-500 hover:text-blue-400 cursor-pointer text-xl" />
+                            </Link>
+
+                            <Link href={PATH.X}>
+                                <FaTwitter className="text-blue-400 hover:text-blue-300 cursor-pointer text-xl" />
+                            </Link>
+                            <Link href={PATH.LINKEDIN}>
+                                <FaLinkedin className="text-blue-600 hover:text-blue-500 cursor-pointer text-xl" />
+                            </Link>
+
+                            <Link href={PATH.INSTAGRAM}>
+                                <FaInstagram className="text-pink-500 hover:text-pink-400 cursor-pointer text-xl" />
+
+                            </Link>
+
+                            <Link href={PATH.YOUTUBE}>
+
+                                <FaYoutube className="text-red-500 hover:text-red-400 cursor-pointer text-xl" />
+
+                            </Link>
                         </div>
                     </div>
 
@@ -122,7 +141,7 @@ const Footer = () => {
                 <div className="border-t border-gray-700 mt-8 pt-6">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                         <p className="text-gray-400 text-sm ">
-                            © 2025 Maazster Tech GENX PVT LTD. All Rights Reserved.
+                            ©{currentYear} Maazster Tech GENX PVT LTD. All Rights Reserved.
                         </p>
                         <p className="text-orange-400 text-sm pl-24">
                             Powered By Maazstertech.com

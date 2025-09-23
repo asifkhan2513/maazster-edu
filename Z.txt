@@ -2,3 +2,5 @@ loader pending
 hover effect pending
 testimonial images 
 and contain of website recheck
+
+social media link (twitter , linkedin , instagram , youtube, facebook)

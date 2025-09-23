@@ -119,23 +119,15 @@ const Testimonials = () => {
         <Image
           src={testimonialTop}
           alt="testimonial Background"
-          className="w-full h-[350px] sm:h-[400px] md:h-[600px] object-cover mt-14"
+          className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover mt-14"
           priority
         />
 
         {/* Overlay Content */}
-        <div className="absolute inset-0 flex flex-col sm:flex-row">
-          {/* Left Section (Icon)
-          <div className="flex-1 flex items-center justify-center bg-black/40 p-4">
-            <MdGroups2 className="text-[#F97316] text-5xl sm:text-6xl md:text-8xl" />
-          </div> */}
-
-          {/* Right Section (Text) */}
-          <div className="flex-1 flex items-center justify-center bg-black/40 p-4">
-            <h1 className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent ml-[650px] text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-center">
-              Impact
-            </h1>
-          </div>
+        <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+          <h1 className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-center px-4">
+            Impact
+          </h1>
         </div>
       </div>
 

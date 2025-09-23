@@ -40,3 +40,5 @@ next-env.d.ts
 .env
 z.txt
 *z.txt
+Z.txt
+*Z.txt

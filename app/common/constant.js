@@ -13,4 +13,9 @@ export const PATH = {
   HELP: "/help",
   SUPPORT: "/support",
   PROJECTS: "/project",
+  INSTAGRAM: "https://www.instagram.com/maazstertech",
+  FACEBOOK: "https://www.facebook.com/p/Maazster-Tech-Pvt-Ltd-100067027774467/",
+  LINKEDIN: "https://www.linkedin.com/company/maazster-tech/?originalSubdomain=in",
+  YOUTUBE: "https://www.youtube.com/@Maazstertechofficial",
+  X: "https://x.com/Maazstertech"
 };

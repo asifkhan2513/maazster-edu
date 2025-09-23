@@ -32,6 +32,8 @@ import {
   FaCode,
 } from "react-icons/fa";
 import Agular from "../common/a/angular.webp";
+import Link from "next/link";
+import { PATH } from "../common/constant";
 export const metadata = {
   title: "Maazster Edu : Courses",
   description: "this is course page",
@@ -229,14 +231,18 @@ const Courses = () => {
                   OUR
                 </span>
                 <br />
-                <span className="text-gray-900 drop-shadow-lg bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent">COURSES</span>
+                <span className="text-gray-900 drop-shadow-lg bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent">
+                  COURSES
+                </span>
 
                 {/* Decorative underline */}
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 md:w-32 lg:w-40 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full shadow-lg"></div>
               </h2>
             </div>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mt-6 md:mt-8">
-              Explore our comprehensive range of industry-focused courses designed to accelerate your tech career with hands-on projects and expert mentorship
+              Explore our comprehensive range of industry-focused courses
+              designed to accelerate your tech career with hands-on projects and
+              expert mentorship
             </p>
           </div>
 
@@ -294,7 +300,7 @@ const Courses = () => {
                 </div>
 
                 <button className="w-full bg-gradient-to-r from-orange-400 to-orange-500 text-white py-3 px-6 rounded-lg font-semibold hover:from-orange-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105">
-                  Enroll Now
+                  <Link href={PATH.CONTACT_US}>Enroll Now</Link>
                 </button>
               </div>
             ))}
@@ -320,7 +326,8 @@ const Courses = () => {
               </h2>
             </div>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mt-6 md:mt-8">
-              Master the most in-demand technologies and tools used by top companies worldwide
+              Master the most in-demand technologies and tools used by top
+              companies worldwide
             </p>
           </div>
 
