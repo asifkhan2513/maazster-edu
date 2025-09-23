@@ -318,9 +318,9 @@ const Project = () => {
               Responsive: on small screens it stacks (left on top)
           */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <aside className="col-span-1">
+            <aside className="col-span-1 ">
               {/* Vertical filter buttons (left) */}
-              <div className="bg-white rounded-2xl shadow p-4 sticky top-28">
+              <div className="bg-white rounded-2xl shadow p-4 sticky top-28 hidden md:block">
                 <h3 className="text-sm font-semibold text-gray-600 mb-3">
                   Categories
                 </h3>
