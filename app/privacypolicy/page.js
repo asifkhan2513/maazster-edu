@@ -1,5 +1,5 @@
-import Navbar from "@/app/navbar/page";
-import Footer from "@/app/footer/page";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
 
 export const metadata = {
     title: "Privacy Policy - Maazster Edu",

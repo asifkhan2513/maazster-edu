@@ -1,5 +1,5 @@
-import Navbar from "@/app/navbar/page";
-// import Footer from "@/app/footer/page";
+import Navbar from "@/app/components/Navbar";
+// import Footer from "@/app/components/Footer";
 import Image from "next/image";
 import logo from "@/app/common/logo.png";
 import {

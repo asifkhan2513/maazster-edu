@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "@/app/navbar/page";
+import Navbar from "@/app/components/Navbar";
 import { IoMdTrendingUp } from "react-icons/io";
 import Link from "next/link";
 import { PATH } from "../common/constant";
@@ -58,15 +58,15 @@ const Plans = () => {
       <Navbar />
 
       <div className="relative w-full">
-         <div className="relative w-full mt-16 ">
-        {/* Background Image */}
-        <Image
-          src={planTop}
-          alt="Plans Background"
-         className="w-full h-auto object-contain "
-          priority
-        /></div>
-    
+        <div className="relative w-full mt-16 ">
+          {/* Background Image */}
+          <Image
+            src={planTop}
+            alt="Plans Background"
+            className="w-full h-auto object-contain "
+            priority
+          /></div>
+
         {/* Overlay Content */}
         <div className="absolute inset-0 flex flex-col sm:flex-row">
           {/* Left Section (Icon) */}
@@ -113,11 +113,10 @@ const Plans = () => {
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 ${
-                  index === 1
+                className={`relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 ${index === 1
                     ? "border-orange-400 ring-4 ring-orange-100"
                     : "border-gray-200 hover:border-orange-300"
-                }`}
+                  }`}
               >
                 {index === 1 && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -161,11 +160,10 @@ const Plans = () => {
                 </ul>
 
                 <button
-                  className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
-                    index === 1
+                  className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${index === 1
                       ? "bg-gradient-to-r from-orange-400 to-orange-500 text-white hover:from-orange-500 hover:to-orange-600 shadow-lg"
                       : "bg-gray-100 text-gray-800 hover:bg-orange-400 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {index === 1 ? "Get Started Now" : "Select Plan"}
                 </button>

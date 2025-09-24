@@ -3,7 +3,7 @@ import React from "react";
 import user1 from "../common/user1.jpg";
 import user2 from "../common/user2.jpg";
 import user3 from "../common/user3.jpg";
-import Navbar from "@/app/navbar/page";
+import Navbar from "@/app/components/Navbar";
 import testimonialTop from "../common/testimonialTop.png";
 
 const testimonials = [

@@ -42,3 +42,6 @@ z.txt
 *z.txt
 Z.txt
 *Z.txt
+.dockerignore
+Dockerfile
+docker-compose.yml

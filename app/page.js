@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Navbar from "@/app/navbar/page";
-import Courses from "@/app/courses/page";
-import Plans from "@/app/plans/page";
+import Navbar from "@/app/components/Navbar";
+import CoursesSection from "@/app/components/CoursesSection";
+import PlansSection from "@/app/components/PlansSection";
 import Banner from "@/app/common/banner.png";
 import TestimonialsSection from "@/app/common/TestimonialsSection";
 import TypedAnimation from "@/app/components/TypedAnimation";
@@ -235,8 +235,8 @@ export default function Home() {
 
       {/* Other Sections */}
       <section className="mt-8 md:mt-12 lg:mt-16">
-        <Courses />
-        <Plans />
+        <CoursesSection />
+        <PlansSection />
 
         {/* Banner Section with proper spacing */}
         <div className="mt-12 md:mt-16 lg:mt-20">

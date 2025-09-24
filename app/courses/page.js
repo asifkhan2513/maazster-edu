@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "@/app/navbar/page";
+import Navbar from "@/app/components/Navbar";
 import Image from "next/image";
 import Java from "../common/a/java.png";
 import SpingBoot from "../common/a/spring-boot.png";

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import Navbar from "@/app/navbar/page";
+import Navbar from "@/app/components/Navbar";
 
 const LoginForm = () => {
     const [credentials, setCredentials] = useState({ username: '', password: '' });

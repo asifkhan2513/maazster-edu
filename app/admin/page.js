@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import Navbar from "@/app/navbar/page";
+import Navbar from "@/app/components/Navbar";
 
 const AdminDashboard = () => {
     const router = useRouter();
