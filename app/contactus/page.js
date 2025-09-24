@@ -1,5 +1,7 @@
+"use client"
 import Navbar from "@/app/navbar/page";
 // import Footer from "@/app/footer/page";
+import { Toaster, toast } from "react-hot-toast";
 import Image from "next/image";
 import logo from "@/app/common/logo.png";
 import {
@@ -13,17 +15,79 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import Link from "next/link";
-
-export const metadata = {
-  title: "Contact Us - Maazster Edu",
-  description:
-    "Get in touch with Maazster Edu for course inquiries and support",
-};
+import axios from "axios";
+import { useState } from "react";
+// export const metadata = {
+//   title: "Contact Us - Maazster Edu",
+//   description:
+//     "Get in touch with Maazster Edu for course inquiries and support",
+// };
 
 const ContactUs = () => {
+
+   const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+    courses: "",
+  });
+ const [isLoading, setIsLoading] = useState(false);
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    console.log(name, ":", value); 
+  };
+
+  const callapi=async()=>{
+    try {
+      const res=await axios.post("http://localhost:8080/api/v1/send",formData);
+      console.log("Response:", res.statusText)
+
+      if(res.status===200){
+        console.log("Success")
+         toast.success("Message sent successfully!");
+        setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            message: "",
+            courses: "",
+        })
+      }else{
+        toast.error("Failed to send message. Please try again.");
+      }
+
+
+      
+    } catch (error) {
+      toast.error("Something went wrong. Please check the server.");
+      console.error("Error sending form data:", error);
+      
+    }finally {
+      setIsLoading(false);
+    }
+  }
+ 
+  const handleSubmit = (e) => {
+
+    e.preventDefault(); 
+    setIsLoading(true);
+    console.log("Form Data on Submit:", formData);
+    callapi()
+    
+  };
+
+
+
+  
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
+      <Toaster position="top-right"/>
 
       <div className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4">
@@ -82,14 +146,17 @@ const ContactUs = () => {
                 Send us a Message
               </h2>
 
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       First Name
                     </label>
                     <input
+                      name="firstName"
                       type="text"
+                      value={formData.firstName}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                       placeholder="Enter your first name"
                     />
@@ -99,7 +166,10 @@ const ContactUs = () => {
                       Last Name
                     </label>
                     <input
+                      name="lastName"
                       type="text"
+                      value={formData.lastName}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                       placeholder="Enter your last name"
                     />
@@ -111,7 +181,10 @@ const ContactUs = () => {
                     Email Address
                   </label>
                   <input
+                    name="email"
                     type="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     placeholder="Enter your email"
                   />
@@ -122,7 +195,10 @@ const ContactUs = () => {
                     Phone Number
                   </label>
                   <input
+                    name="phone"
                     type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     placeholder="Enter your phone number"
                   />
@@ -132,7 +208,12 @@ const ContactUs = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Course Interest
                   </label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                  <select
+                    name="courses"
+                    value={formData.courses}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  >
                     <option value="">Select a course</option>
                     <option value="mern">MERN Full Stack</option>
                     <option value="ai-ml">AI & Machine Learning</option>
@@ -150,7 +231,10 @@ const ContactUs = () => {
                     Message
                   </label>
                   <textarea
+                    name="message"
                     rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     placeholder="Tell us about your learning goals..."
                   ></textarea>
@@ -160,7 +244,7 @@ const ContactUs = () => {
                   type="submit"
                   className="w-full bg-gradient-to-r from-orange-400 to-orange-500 text-white py-3 px-6 rounded-lg font-semibold hover:from-orange-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Send Message
+                 {isLoading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
