@@ -154,12 +154,9 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-orange-400 text-sm" />
-                <Link
-                  className="text-gray-300 text-sm"
-                  href="mailto:info@maazsteredu.com"
-                >
-                  info@maazsteredu.com
-                </Link>
+               <Link href="mailto:info@maazsteredu.com" className="hover:underline">
+                                info@maazsteredu.com
+                              </Link>
               </div>
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="text-orange-400 text-sm mt-1" />

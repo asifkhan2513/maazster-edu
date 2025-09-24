@@ -457,8 +457,11 @@ export default function Home() {
                           Email
                         </h4>
                         <p className="text-gray-600 text-sm md:text-base">
-                          info@maazsteredu.com
-                        </p>
+                              <Link href="mailto:info@maazsteredu.com" className="hover:underline">
+                                info@maazsteredu.com
+                              </Link>
+                            </p>
+
                       </div>
                     </div>
 

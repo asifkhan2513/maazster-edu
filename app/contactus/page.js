@@ -10,12 +10,14 @@ import {
   FaFacebook,
   FaTwitter,
   FaLinkedin,
-  FaInstagram
+  FaInstagram,
 } from "react-icons/fa";
+import Link from "next/link";
 
 export const metadata = {
   title: "Contact Us - Maazster Edu",
-  description: "Get in touch with Maazster Edu for course inquiries and support",
+  description:
+    "Get in touch with Maazster Edu for course inquiries and support",
 };
 
 const ContactUs = () => {
@@ -40,15 +42,18 @@ const ContactUs = () => {
               </h1>
             </div>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Ready to start your learning journey? Get in touch with our team for course guidance,
-              enrollment support, or any questions about our programs.
+              Ready to start your learning journey? Get in touch with our team
+              for course guidance, enrollment support, or any questions about
+              our programs.
             </p>
           </div>
 
           {/* Why Choose Us Section - Moved to Top */}
           <div className="mb-16">
             <div className="bg-gradient-to-r from-orange-400 to-orange-500 rounded-2xl p-8 text-white transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-              <h2 className="text-2xl font-bold mb-6 text-center">Why Choose Us?</h2>
+              <h2 className="text-2xl font-bold mb-6 text-center">
+                Why Choose Us?
+              </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="text-center transform hover:scale-110 transition-all duration-300">
                   <div className="text-3xl font-bold">5000+</div>
@@ -73,7 +78,9 @@ const ContactUs = () => {
           <div className="grid lg:grid-cols-2 gap-12 flex flex-1">
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:translate-x-2">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                Send us a Message
+              </h2>
 
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
@@ -130,7 +137,9 @@ const ContactUs = () => {
                     <option value="mern">MERN Full Stack</option>
                     <option value="ai-ml">AI & Machine Learning</option>
                     <option value="java">Java Full Stack with AI</option>
-                    <option value="data-analytics">Data Analytics with AI</option>
+                    <option value="data-analytics">
+                      Data Analytics with AI
+                    </option>
                     <option value="digital-marketing">Digital Marketing</option>
                     <option value="dsa">Data Structures & Algorithms</option>
                   </select>
@@ -160,7 +169,9 @@ const ContactUs = () => {
             <div className="space-y-8">
               {/* Contact Details */}
               <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:-translate-x-2">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">Get in Touch</h2>
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                  Get in Touch
+                </h2>
 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4 hover:bg-gray-50 p-3 rounded-lg transition-all duration-300 transform hover:scale-105">
@@ -170,9 +181,12 @@ const ContactUs = () => {
                     <div>
                       <h3 className="font-semibold text-gray-800">Phone</h3>
                       <p className="text-gray-600">+91 9214588441</p>
-                      <a href="tel:+919214588441" className="text-orange-500 hover:text-orange-600 text-sm">
+                      <Link
+                        href="tel:+919214588441"
+                        className="text-orange-500 hover:text-orange-600 text-sm"
+                      >
                         Call Now
-                      </a>
+                      </Link>
                     </div>
                   </div>
 
@@ -182,7 +196,15 @@ const ContactUs = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-800">Email</h3>
-                      <p className="text-gray-600">info@maazsteredu.com</p>
+                      <p className="text-gray-600">
+                        {" "}
+                        <Link
+                          href="mailto:
+                          info@maazsteredu.com "
+                        >
+                          info@maazsteredu.com
+                        </Link>
+                      </p>
                     </div>
                   </div>
 
@@ -193,7 +215,8 @@ const ContactUs = () => {
                     <div>
                       <h3 className="font-semibold text-gray-800">Address</h3>
                       <p className="text-gray-600">
-                        D- 1099, Sector 5, D Block, Indira Nagar<br />
+                        D- 1099, Sector 5, D Block, Indira Nagar
+                        <br />
                         Lucknow, Uttar Pradesh 226016
                         <br />
                         India
@@ -206,9 +229,15 @@ const ContactUs = () => {
                       <FaClock className="text-orange-500 text-lg" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-800">Office Hours</h3>
-                      <p className="text-gray-600">Monday - Friday: 9:00 AM - 7:00 PM</p>
-                      <p className="text-gray-600">Saturday: 10:00 AM - 5:00 PM</p>
+                      <h3 className="font-semibold text-gray-800">
+                        Office Hours
+                      </h3>
+                      <p className="text-gray-600">
+                        Monday - Friday: 9:00 AM - 7:00 PM
+                      </p>
+                      <p className="text-gray-600">
+                        Saturday: 10:00 AM - 5:00 PM
+                      </p>
                       <p className="text-gray-600">Sunday: Closed</p>
                     </div>
                   </div>
@@ -236,8 +265,6 @@ const ContactUs = () => {
                   Stay updated with our latest courses, success stories, and tech industry insights.
                 </p>
               </div> */}
-
-
             </div>
           </div>
         </div>
