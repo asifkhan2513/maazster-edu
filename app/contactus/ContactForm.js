@@ -172,7 +172,7 @@ const ContactForm = () => {
             type="text"
             name="lastName"
             placeholder="Last Name"
-            name="lastName"
+          
             className="border-b outline-none py-2 px-1 focus:border-orange-500"
             value={formData.lastName}
             onChange={handleChange}
@@ -182,7 +182,7 @@ const ContactForm = () => {
             type="email"
             name="email"
             placeholder="Email"
-            name="email"
+           
             className="border-b outline-none py-2 px-1 focus:border-orange-500"
             value={formData.email}
             onChange={handleChange}
@@ -192,7 +192,7 @@ const ContactForm = () => {
             type="tel"
             name="phone"
             placeholder="Phone No"
-            name="phone"
+        
             className="border-b outline-none py-2 px-1 focus:border-orange-500"
             value={formData.phone}
             onChange={handleChange}
@@ -205,12 +205,9 @@ const ContactForm = () => {
           rows="3"
           name="message"
           placeholder="Type your message..."
-<<<<<<< HEAD
-          name="message"
+     
           className="w-full border-b outline-none py-2 px-1 focus:border-orange-500 "
-=======
-          className="w-full border-b outline-none py-2 px-1 focus:border-orange-500"
->>>>>>> 889d02d7d5da1aaaa61d2573be71d0657e7b0821
+         
           value={formData.message}
           onChange={handleChange}
           required
@@ -224,13 +221,9 @@ const ContactForm = () => {
               <label key={course} className="cursor-pointer">
                 <input
                   type="checkbox"
-<<<<<<< HEAD
                   name="courses"
                   value={formData.course}
-=======
-                  value={course}
-                  checked={formData.courses.includes(course)}
->>>>>>> 889d02d7d5da1aaaa61d2573be71d0657e7b0821
+                  checked={formData.course.includes(course)}
                   onChange={handleCourseChange}
                   className="mr-2 accent-orange-500 cursor-pointer"
                 />

@@ -6,13 +6,6 @@ import Image from "next/image";
 import logo from "@/app/common/logo.png";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import Link from "next/link";
-<<<<<<< HEAD
-export const metadata = {
-  title: "Contact Us - Maazster Edu",
-  description:
-    "Get in touch with Maazster Edu for course inquiries and support",
-};
-=======
 import axios from "axios";
 import { useState } from "react";
 // export const metadata = {
@@ -20,7 +13,6 @@ import { useState } from "react";
 //   description:
 //     "Get in touch with Maazster Edu for course inquiries and support",
 // };
->>>>>>> 889d02d7d5da1aaaa61d2573be71d0657e7b0821
 
 const ContactUs = () => {
 
