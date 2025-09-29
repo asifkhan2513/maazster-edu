@@ -2,18 +2,8 @@ import Navbar from "@/app/navbar/page";
 // import Footer from "@/app/footer/page";
 import Image from "next/image";
 import logo from "@/app/common/logo.png";
-import {
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaClock,
-  FaFacebook,
-  FaTwitter,
-  FaLinkedin,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import Link from "next/link";
-
 export const metadata = {
   title: "Contact Us - Maazster Edu",
   description:
@@ -30,13 +20,6 @@ const ContactUs = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-6">
-              {/* <Image
-                src="https://maazstertech.com/assets/img/logo/maazsterblack.png"
-                alt="Maazster Edu Icon"
-                width={200}
-                height={48}
-                className="mr-4"
-              /> */}
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
                 Contact Us
               </h1>

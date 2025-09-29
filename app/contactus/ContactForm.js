@@ -1,23 +1,24 @@
 // app/contact/ContactForm.js
 "use client";
-
 import { use, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const [formData , setFormData]  = useState({
-    firstName:"",
-    lastName:"",
-    email:"",
-    phone:"",
-    message:"",
-    course:[]
-  })
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+    course: [],
+  });
 
   const handleChange = (e) => {
-    console.log(e.target )
+    console.log(e.target);
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -34,9 +35,9 @@ const ContactForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    console.log("Form Data==>",formData)
+    console.log("Form Data==>", formData);
     e.preventDefault();
-    
+
     setIsLoading(true);
 
     const response = await fetch("/api/send", {
@@ -71,23 +72,13 @@ const ContactForm = () => {
       toast.error("Failed to send message. Please try again.");
     }
   };
-
-  // const courseOptions = [
-  //   "UX/UI",
-  //   "Data Analytics",
-  //   "Java",
-  //   "MERN Stack",
-  //   "AI/ML",
-  //   "Digital Marketing",
-  // ];
-
   return (
     <div className="p-8 md:w-1/2 bg-white">
       {/* Toaster for notifications */}
       <Toaster position="top-center" />
 
       <h2 className="text-xl font-semibold mb-6">
-        We’re Just One Message Away from{" "}
+        We are Just One Message Away from{" "}
         <span className="text-orange-500">Helping You Grow.</span>
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
