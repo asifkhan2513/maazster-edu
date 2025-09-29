@@ -1,67 +1,76 @@
 // app/contact/ContactForm.js
 "use client";
 
-import { useState } from "react";
+import { use, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 
 const ContactForm = () => {
-  // State for all form fields
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-  const [courses, setCourses] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  const [formData , setFormData]  = useState({
+    firstName:"",
+    lastName:"",
+    email:"",
+    phone:"",
+    message:"",
+    course:[]
+  })
+
+  const handleChange = (e) => {
+    console.log(e.target )
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
   // Handler for checkbox changes
-  // const handleCourseChange = (e) => {
-  //   const { value, checked } = e.target;
-  //   if (checked) {
-  //     setCourses((prevCourses) => [...prevCourses, value]);
-  //   } else {
-  //     setCourses((prevCourses) =>
-  //       prevCourses.filter((course) => course !== value)
-  //     );
-  //   }
-  // };
+  const handleCourseChange = (e) => {
+    const { value, checked } = e.target;
+    if (checked) {
+      setCourses((prevCourses) => [...prevCourses, value]);
+    } else {
+      setCourses((prevCourses) =>
+        prevCourses.filter((course) => course !== value)
+      );
+    }
+  };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setIsLoading(true);
+  const handleSubmit = async (e) => {
+    console.log("Form Data==>",formData)
+    e.preventDefault();
+    
+    setIsLoading(true);
 
-  //   const response = await fetch("/api/send-email", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       firstName,
-  //       lastName,
-  //       email,
-  //       phone,
-  //       message,
-  //       courses,
-  //     }),
-  //   });
+    const response = await fetch("/api/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        phone,
+        message,
+        courses,
+      }),
+    });
 
-  //   setIsLoading(false);
+    setIsLoading(false);
 
-  //   if (response.ok) {
-  //     toast.success("Message sent successfully!");
-  //     // Reset form fields
-  //     setFirstName("");
-  //     setLastName("");
-  //     setEmail("");
-  //     setPhone("");
-  //     setMessage("");
-  //     setCourses([]);
-  //     // Uncheck all checkboxes
-  //     document
-  //       .querySelectorAll("input[type=checkbox]")
-  //       .forEach((el) => (el.checked = false));
-  //   } else {
-  //     toast.error("Failed to send message. Please try again.");
-  //   }
-  // };
+    if (response.ok) {
+      toast.success("Message sent successfully!");
+      // Reset form fields
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+      setCourses([]);
+      // Uncheck all checkboxes
+      document
+        .querySelectorAll("input[type=checkbox]")
+        .forEach((el) => (el.checked = false));
+    } else {
+      toast.error("Failed to send message. Please try again.");
+    }
+  };
 
   // const courseOptions = [
   //   "UX/UI",
@@ -85,43 +94,48 @@ const ContactForm = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
             type="text"
+            name="firstName"
             placeholder="First Name"
             className="border-b outline-none py-2 px-1 focus:border-orange-500"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+            value={formData.firstName}
+            onChange={handleChange}
             required
           />
           <input
             type="text"
             placeholder="Last Name"
+            name="lastName"
             className="border-b outline-none py-2 px-1 focus:border-orange-500"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            value={formData.lastName}
+            onChange={handleChange}
             required
           />
           <input
             type="email"
             placeholder="Email"
+            name="email"
             className="border-b outline-none py-2 px-1 focus:border-orange-500"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={handleChange}
             required
           />
           <input
             type="tel"
             placeholder="Phone No"
+            name="phone"
             className="border-b outline-none py-2 px-1 focus:border-orange-500"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            value={formData.phone}
+            onChange={handleChange}
             required
           />
         </div>
         <textarea
           rows="3"
           placeholder="Type your message..."
+          name="message"
           className="w-full border-b outline-none py-2 px-1 focus:border-orange-500 "
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          value={formData.message}
+          onChange={handleChange}
           required
         ></textarea>
 
@@ -132,7 +146,8 @@ const ContactForm = () => {
               <label key={course}>
                 <input
                   type="checkbox"
-                  value={course}
+                  name="courses"
+                  value={formData.course}
                   onChange={handleCourseChange}
                   className="mr-2 accent-orange-500 cursor-pointer"
                 />
