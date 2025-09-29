@@ -218,7 +218,7 @@ const Project = () => {
           </div> */}
 
           {/* Right Section (Text) */}
-        <div className="flex-1 flex items-center px-24  justify-start  bg-black/10 p-4">
+          <div className="flex-1 flex items-center px-24  justify-start  bg-black/10 p-4">
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent">
               Growth
             </h1>
@@ -311,12 +311,6 @@ const Project = () => {
               are making their mark in the tech industry.
             </p>
           </div>
-
-          {/* Two-column layout:
-              - Left: stats (half-screen) + vertical filter buttons
-              - Right: project grid
-              Responsive: on small screens it stacks (left on top)
-          */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <aside className="col-span-1 ">
               {/* Vertical filter buttons (left) */}

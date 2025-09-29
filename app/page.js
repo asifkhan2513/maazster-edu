@@ -5,9 +5,6 @@ import Plans from "@/app/plans/page";
 import Banner from "@/app/common/banner.png";
 import TestimonialsSection from "@/app/common/TestimonialsSection";
 import TypedAnimation from "@/app/components/TypedAnimation";
-// import AnimatedText from "@/app/components/AnimatedText";
-// import AnimatedContainer from "@/app/components/AnimatedContainer";
-
 import { FaUserGroup } from "react-icons/fa6";
 import { ChevronsLeftRightEllipsis } from "lucide-react";
 import BannerSection from "./banner";
@@ -21,7 +18,7 @@ export default function Home() {
 
       {/* Hero Section - Mobile Optimized */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-orange-50 pt-16 md:pt-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-2">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-20">
             {/* Left Content - Mobile First */}
             <div className="w-full lg:w-1/2 text-center lg:text-left space-y-4 md:space-y-6 order-2 lg:order-1">
@@ -30,7 +27,7 @@ export default function Home() {
               </p>
 
               <div className="space-y-2 md:space-y-4">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-gray-900 leading-tight">
+                <h1 className=" select-none text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-gray-900 leading-tight">
                   Best Place To Learn
                 </h1>
 
@@ -39,7 +36,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-4 lg:px-0">
+              <p className="select-none text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-4 lg:px-0">
                 Transform your career with cutting-edge technology education.
                 Master MERN Stack, AI, and modern web development with industry
                 experts.
@@ -104,7 +101,7 @@ export default function Home() {
                   <Image
                     src={Banner}
                     alt="Learning Platform Banner"
-                    className="w-[250px] h-[300px] sm:w-[300px] sm:h-[360px] md:w-[350px] md:h-[420px] lg:w-[400px] lg:h-[480px] xl:w-[450px] xl:h-[540px] 2xl:w-[500px] 2xl:h-[600px] object-contain drop-shadow-2xl"
+                    className="w-[350px] h-[300px] sm:w-[300px] sm:h-[360px] md:w-[450px] md:h-[420px] lg:w-[400px] lg:h-[480px] xl:w-[450px] xl:h-[540px] 2xl:w-[500px] 2xl:h-[600px] object-contain drop-shadow-2xl"
                     priority
                   />
                 </div>
@@ -457,11 +454,13 @@ export default function Home() {
                           Email
                         </h4>
                         <p className="text-gray-600 text-sm md:text-base">
-                              <Link href="mailto:info@maazsteredu.com" className="hover:underline">
-                                info@maazsteredu.com
-                              </Link>
-                            </p>
-
+                          <Link
+                            href="mailto:info@maazsteredu.com"
+                            className="hover:underline"
+                          >
+                            info@maazsteredu.com
+                          </Link>
+                        </p>
                       </div>
                     </div>
 

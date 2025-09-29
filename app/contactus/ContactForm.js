@@ -1,59 +1,13 @@
 "use client";
-import { use, useState } from "react";
+import { useState, useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { submitContactForm, resetContactState } from "../slices/contactUs";
 
 const ContactForm = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+  const { loading, success, error } = useSelector((state) => state.contactUs);
 
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: "",
-    course: [],
-  });
-
-  const handleChange = (e) => {
-    console.log(e.target);
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-  // Handler for checkbox changes
-  const handleCourseChange = (e) => {
-    const { value, checked } = e.target;
-    if (checked) {
-      setCourses((prevCourses) => [...prevCourses, value]);
-    } else {
-      setCourses((prevCourses) =>
-        prevCourses.filter((course) => course !== value)
-      );
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    console.log("Form Data==>", formData);
-    e.preventDefault();
-
-    setIsLoading(true);
-
-    const response = await fetch("/api/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        firstName,
-        lastName,
-        email,
-        phone,
-        message,
-        courses,
-      }),
-    });
-
-    setIsLoading(false);
-  // Single state for all form data
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -63,12 +17,9 @@ const ContactForm = () => {
     courses: [],
   });
 
-  const [isLoading, setIsLoading] = useState(false);
-
   // Handle text inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log("handle")
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -85,41 +36,32 @@ const ContactForm = () => {
 
   // Submit handler
   const handleSubmit = async (e) => {
-    console.log("Submit triggered"); 
-    e.preventDefault();              
-    console.log("Default prevented"); 
-    console.log("Form Data Submitted:", formData); 
-
-    setIsLoading(true);
-
-    try {
-      const response = await fetch("http://localhost:8080/api/v1/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        toast.success("Message sent successfully!");
-        // Reset form
-        // setFormData({
-        //   firstName: "",
-        //   lastName: "",
-        //   email: "",
-        //   phone: "",
-        //   message: "",
-        //   courses: [],
-        // });
-      } else {
-        toast.error("Failed to send message. Please try again.");
-      }
-    } catch (error) {
-      toast.error("Something went wrong. Please check the server.");
-      console.error("Error sending form data:", error);
-    } finally {
-      setIsLoading(false);
-    }
+    e.preventDefault();
+    console.log("Form Data Submitted:", formData);
+    dispatch(submitContactForm(formData));
   };
+
+  // Handle success/error states
+  useEffect(() => {
+    if (success) {
+      toast.success("Message sent successfully!");
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+        courses: [],
+      });
+      dispatch(resetContactState());
+    }
+
+    if (error) {
+      toast.error(error);
+      dispatch(resetContactState());
+    }
+  }, [success, error, dispatch]);
 
   const courseOptions = [
     "UX/UI",
@@ -129,24 +71,6 @@ const ContactForm = () => {
     "AI/ML",
     "Digital Marketing",
   ];
-
-    if (response.ok) {
-      toast.success("Message sent successfully!");
-      // Reset form fields
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPhone("");
-      setMessage("");
-      setCourses([]);
-      // Uncheck all checkboxes
-      document
-        .querySelectorAll("input[type=checkbox]")
-        .forEach((el) => (el.checked = false));
-    } else {
-      toast.error("Failed to send message. Please try again.");
-    }
-  };
   return (
     <div className="p-8 md:w-1/2 bg-white">
       <Toaster position="top-center" />
@@ -172,7 +96,7 @@ const ContactForm = () => {
             type="text"
             name="lastName"
             placeholder="Last Name"
-          
+
             className="border-b outline-none py-2 px-1 focus:border-orange-500"
             value={formData.lastName}
             onChange={handleChange}
@@ -182,7 +106,7 @@ const ContactForm = () => {
             type="email"
             name="email"
             placeholder="Email"
-           
+
             className="border-b outline-none py-2 px-1 focus:border-orange-500"
             value={formData.email}
             onChange={handleChange}
@@ -192,7 +116,7 @@ const ContactForm = () => {
             type="tel"
             name="phone"
             placeholder="Phone No"
-        
+
             className="border-b outline-none py-2 px-1 focus:border-orange-500"
             value={formData.phone}
             onChange={handleChange}
@@ -205,9 +129,9 @@ const ContactForm = () => {
           rows="3"
           name="message"
           placeholder="Type your message..."
-     
+
           className="w-full border-b outline-none py-2 px-1 focus:border-orange-500 "
-         
+
           value={formData.message}
           onChange={handleChange}
           required
@@ -222,8 +146,8 @@ const ContactForm = () => {
                 <input
                   type="checkbox"
                   name="courses"
-                  value={formData.course}
-                  checked={formData.course.includes(course)}
+                  value={course}
+                  checked={formData.courses.includes(course)}
                   onChange={handleCourseChange}
                   className="mr-2 accent-orange-500 cursor-pointer"
                 />
@@ -237,9 +161,9 @@ const ContactForm = () => {
         <button
           type="submit"
           className="w-full bg-gradient-to-r from-orange-400 to-orange-500 text-white py-2 rounded-full font-semibold hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
-          disabled={isLoading}
+          disabled={loading}
         >
-          {isLoading ? "Submitting..." : "Submit"}
+          {loading ? "Submitting..." : "Submit"}
         </button>
       </form>
     </div>

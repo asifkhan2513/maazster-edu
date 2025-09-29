@@ -1,52 +1,65 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { createSlice } from "@reduxjs/toolkit";
-import { API } from "../common/constant";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const contactUs = createAsyncThunk(
+export const submitContactForm = createAsyncThunk(
   "contactUs/submit",
-  async (
-    { firstName, lastName, email, phone, message, courses },
-    { rejectWithValue }
-  ) => {
+  async (formData, { rejectWithValue }) => {
     try {
-      const { data } = await API.post(`/contactsu`, {
-        firstName,
-        lastName,
-        email,
-        phone,
-        message,
-        courses,
-      });
-
-      return data.attendance;
+      const response = await axios.post(
+        "http://localhost:8080/api/v1/send",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      return response.data;
     } catch (error) {
-      console.error("Backend Error:", error.response.data);
+      console.error("Backend Error:", error.response?.data || error.message);
       return rejectWithValue(
-        error.response.data.message || "Something went wrong"
+        error.response?.data?.message || "Something went wrong"
       );
     }
   }
 );
 
-const contactus = createSlice({
+const contactUsSlice = createSlice({
   name: "contactUs",
   initialState: {
     loading: false,
+    success: false,
+    error: null,
+    message: "",
   },
   reducers: {
-    setLocalAttendanceStatus: (state, action) => {
-      const { employeeId, status } = action.payload;
-      const index = state.todayList.findIndex((r) => r.employee === employeeId);
-      if (index !== -1) {
-        state.todayList[index].status = status;
-      } else {
-        // If no record exists, push new
-        state.todayList.push({
-          employee: employeeId,
-          status,
-          date: new Date().toISOString(),
-        });
-      }
+    resetContactState: (state) => {
+      state.loading = false;
+      state.success = false;
+      state.error = null;
+      state.message = "";
     },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(submitContactForm.pending, (state) => {
+        state.loading = true;
+        state.success = false;
+        state.error = null;
+      })
+      .addCase(submitContactForm.fulfilled, (state, action) => {
+        state.loading = false;
+        state.success = true;
+        state.message = "Message sent successfully!";
+        state.error = null;
+      })
+      .addCase(submitContactForm.rejected, (state, action) => {
+        state.loading = false;
+        state.success = false;
+        state.error = action.payload;
+      });
+  },
 });
+
+export const { resetContactState } = contactUsSlice.actions;
+export default contactUsSlice.reducer;

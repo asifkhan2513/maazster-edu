@@ -1,4 +1,8 @@
 import { combineReducers } from "@reduxjs/toolkit";
+import contactUsReducer from "../slices/contactUs";
+
 const rootReducer = combineReducers({
-  contact: cantacUs,
+  contactUs: contactUsReducer,
 });
+
+export default rootReducer;

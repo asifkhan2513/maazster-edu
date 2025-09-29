@@ -22,7 +22,7 @@ export const PATH = {
   YOUTUBE: "https://www.youtube.com/@Maazstertechofficial",
   X: "https://x.com/Maazstertech",
 };
-const API = axios.create({
-  baseURL: process.env.BASE_URL,
+export const API = axios.create({
+  baseURL: process.env.BASE_URL || "http://localhost:8080",
   withCredentials: true,
 });

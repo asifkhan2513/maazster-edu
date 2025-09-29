@@ -1,22 +1,17 @@
-"use client"
+"use client";
 import Navbar from "@/app/navbar/page";
-// import Footer from "@/app/footer/page";
 import { Toaster, toast } from "react-hot-toast";
-import Image from "next/image";
-import logo from "@/app/common/logo.png";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import Link from "next/link";
-import axios from "axios";
-import { useState } from "react";
-// export const metadata = {
-//   title: "Contact Us - Maazster Edu",
-//   description:
-//     "Get in touch with Maazster Edu for course inquiries and support",
-// };
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { submitContactForm, resetContactState } from "../slices/contactUs";
 
 const ContactUs = () => {
+  const dispatch = useDispatch();
+  const { loading, success, error } = useSelector((state) => state.contactUs);
 
-   const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -24,61 +19,43 @@ const ContactUs = () => {
     message: "",
     courses: "",
   });
- const [isLoading, setIsLoading] = useState(false);
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    console.log(name, ":", value); 
   };
 
-  const callapi=async()=>{
-    try {
-      const res=await axios.post("http://localhost:8080/api/v1/send",formData);
-      console.log("Response:", res.statusText)
-
-      if(res.status===200){
-        console.log("Success")
-         toast.success("Message sent successfully!");
-        setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            message: "",
-            courses: "",
-        })
-      }else{
-        toast.error("Failed to send message. Please try again.");
-      }
-
-
-      
-    } catch (error) {
-      toast.error("Something went wrong. Please check the server.");
-      console.error("Error sending form data:", error);
-      
-    }finally {
-      setIsLoading(false);
-    }
-  }
- 
   const handleSubmit = (e) => {
-
-    e.preventDefault(); 
-    setIsLoading(true);
+    e.preventDefault();
     console.log("Form Data on Submit:", formData);
-    callapi()
-    
+    dispatch(submitContactForm(formData));
   };
 
+  // Handle success/error states
+  useEffect(() => {
+    if (success) {
+      toast.success("Message sent successfully!");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+        courses: "",
+      });
+      dispatch(resetContactState());
+    }
 
+    if (error) {
+      toast.error(error);
+      dispatch(resetContactState());
+    }
+  }, [success, error, dispatch]);
 
-  
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <Toaster position="top-right"/>
+      <Toaster position="top-right" />
 
       <div className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4">
@@ -123,7 +100,7 @@ const ContactUs = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 flex flex-1">
+          <div className="grid lg:grid-cols-2 gap-12 flex-1">
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:translate-x-2">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">
@@ -226,9 +203,10 @@ const ContactUs = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-orange-400 to-orange-500 text-white py-3 px-6 rounded-lg font-semibold hover:from-orange-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105"
+                  className="w-full bg-gradient-to-r from-orange-400 to-orange-500 text-white py-3 px-6 rounded-lg font-semibold hover:from-orange-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={loading}
                 >
-                 {isLoading ? "Sending..." : "Send Message"}
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
